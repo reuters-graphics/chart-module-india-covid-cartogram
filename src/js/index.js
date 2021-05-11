@@ -1,8 +1,10 @@
 import * as d3 from 'd3';
 import * as utils from './utils.js';
-import { appendSelect } from 'd3-appendselect';
+import {
+  appendSelect
+} from 'd3-appendselect';
 import merge from 'lodash/merge';
-import pop from '../data/india_states_meta.json';
+import meta from '../data/india_states_meta.json';
 import D3Locale from '@reuters-graphics/d3-locale';
 
 d3.selection.prototype.appendSelect = appendSelect;
@@ -32,23 +34,30 @@ class MyChartModule {
   }
 
   getStatesArray(data, props) {
+    /*  THIS IS WHERE WE FORMAT OUR DATA TO DRAW THE CHARTS
+        1) CREATE AN OBJECT FOR EACH STATE
+        2) GET THE COL AND ROW FOR EACH STATE FROM `meta` LOOKUP
+        3) IF MOBILE, CALCULATE GRID PLACEMENT BASED ON SCREEN WIDTH
+        4) CREATE SERIES FOR EACH STATE BASED ON VALUE OF `props.cat` ('deaths' OR 'cases')
+    */
+
     //Create empty array to return at the end of this function.
     let statesArray = [];
 
-    //Default to a simple grid.
+    //Default to a 6 column grid (not a cartogram)
     //Use rowIndex and colIndex to keep track of rows and columns.
-    let rowIndex = 0;
-    let colIndex = 0;
+    let rowIndex = 1;
+    let colIndex = 1;
     Object.keys(data.states).forEach((key, i) => {
       //If index is divisible by the number of columns
       //Start a new row and reset the column to 0.
       if (i % props.cols == 0 && i > 2) {
         rowIndex++;
-        colIndex = 0;
+        colIndex = 1;
       }
 
-      //Format our data to include per 100K and 7day average.
-      let pop2020 = pop[key].pop_2020;
+      //Format our data to include 7day average.
+      let pop2020 = meta[key].pop_2020;
       let series = [];
       data.states[key].reported[props.cat].forEach((d, index) => {
         let lastWeek = data.states[key].reported[props.cat]
@@ -57,32 +66,41 @@ class MyChartModule {
 
         let obj = {
           val: d,
-          avg7day: lastWeek.length == 7 ? d3.mean(lastWeek) : null,
-          //per100k: d ? ((d / pop2020) * 100000)
+          avg7day: lastWeek.length == 7 ? d3.mean(lastWeek) : null
         };
 
         series.push(obj);
       });
 
+      //Package each state as an object.
       let obj = {
         row: rowIndex,
         col: colIndex,
         key: key,
         name: data.states[key].name,
-        series: series,
         max: d3.max(series, (d) => d[props.lineVar]),
+        series: series
       };
+
+      //If not mobile, pull the rows and column assignments from the metadata
+      if (!props.isMobile) {
+        obj.col = meta[key].col;
+        obj.row = meta[key].row;
+      }
 
       statesArray.push(obj);
       colIndex++; //Tick up column index
     });
 
+    //Get the max value of all max values for the uniform scale version.
     props.uniformMax = d3.max(statesArray, (d) => d.max);
 
+    //Return our formatted data as an array.
     return statesArray;
   }
 
   getArrow(numbers) {
+    /* LOGIC TAKEN FROM GURMAN'S US CARTOGRAM ARROWS */
     const downArrow =
       '<svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="caret-down" class="svg-inline--fa fa-caret-down fa-w-10 " role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path fill="currentColor" d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"></path></svg>';
     const upArrow =
@@ -102,8 +120,7 @@ class MyChartModule {
   }
 
   defaultProps = {
-    aspectHeight: 0.7,
-    cols: 8,
+    cols: 9,
     rows: 8,
     cat: 'cases',
     lineVar: 'avg7day',
@@ -111,10 +128,10 @@ class MyChartModule {
     stroke: '#888',
     strokeWidth: 1.5,
     margin: {
-      top: 20,
-      right: 20,
-      bottom: 25,
-      left: 30,
+      top: 10,
+      right: 10,
+      bottom: 15,
+      left: 10,
     },
     innerMargin: {
       top: 10,
@@ -122,7 +139,6 @@ class MyChartModule {
       bottom: 20,
       left: 10,
     },
-    fill: 'grey',
     chart_formats: {
       // Format number for axis
       number: '~s',
@@ -150,19 +166,36 @@ class MyChartModule {
     const dateFormat = locale.formatTime('%b. %d');
     const numberFormat = locale.format(',');
 
-    const { margin, innerMargin } = props;
+    const {
+      margin,
+      innerMargin
+    } = props;
 
     const container = this.selection().node();
-    const { width: containerWidth } = container.getBoundingClientRect(); // Respect the width of your container!
+    const {
+      width: containerWidth
+    } = container.getBoundingClientRect(); // Respect the width of your container!
 
     const width = containerWidth - margin.left - margin.right;
-    const height =
-      containerWidth * props.aspectHeight - margin.top - margin.bottom;
 
-    let wh = width / props.cols;
+    props.isMobile = width < 500;
 
-    let xGridDom = d3.range(0, props.cols);
-    let yGridDom = d3.range(0, props.rows);
+    if (props.isMobile) {
+      props.cols = 6;
+      props.rows = Object.keys(data.states).length / 6;
+
+      props.innerMargin.top = 5;
+      props.innerMargin.right = 5;
+      props.innerMargin.bottom = 10;
+      props.innerMargin.left = 5;
+
+    }
+
+    let wh = width / props.cols; //width and height of squares for our grid.
+    const height = wh * props.rows;
+
+    let xGridDom = d3.range(1, props.cols + 1);
+    let yGridDom = d3.range(1, props.rows + 1);
 
     let statesArray = this.getStatesArray(data, props);
 
@@ -218,7 +251,6 @@ class MyChartModule {
       .data(statesArray, (d) => d.key)
       .join('div')
       .attr('class', 'state-name')
-      //.html(d=> d.key)
       .html((d) => {
         return `${this.getArrow(d.series)} <p>${d.key}</p>`;
       })
@@ -282,11 +314,11 @@ class MyChartModule {
         let index = Math.round(inverseX(mx));
 
         index =
-          index < 0
-            ? 0
-            : index >= data.series.length
-            ? data.series.length - 2
-            : index;
+          index < 0 ?
+          0 :
+          index >= data.series.length ?
+          data.series.length - 2 :
+          index;
 
         const datum = d.series[index];
         const datumY = datum[props.lineVar];
