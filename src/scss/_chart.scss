@@ -4,10 +4,48 @@
 
 $MyChartModule-container: '#my-chart-module-container' !default;
 
+$half-white: hsla(0, 0%, 100%, .75);
+
 #{$MyChartModule-container} {
+
+  background: #2f353f;
+  position: relative;
+
+  .state-name {
+    position: absolute;
+
+    p {
+      color: $half-white;
+      font-size: .8rem;
+      font-weight: 200;
+    }
+
+    p,
+    svg {
+      display: inline-block;
+      vertical-align: bottom;
+      margin-bottom: 0;
+      line-height: 1rem;
+    }
+
+    svg {
+      width: .625em;
+    }
+
+    .fa-caret-down {
+      color: #74c476;
+    }
+
+    .fa-caret-up {
+      color: #ee665b;
+    }
+  }
+
+
   /* Write your chart styles here */
   .axis {
     pointer-events: none;
+
     text {
       font-family: $font-family-sans-serif;
       fill: $gray-400;
@@ -27,14 +65,23 @@ $MyChartModule-container: '#my-chart-module-container' !default;
 
   g.state-g {
 
-    rect {
+    path {
       fill: none;
     }
+  }
 
-    path {
-      stroke: $orange-400;
-      stroke-width: 2;
-      fill: none;
+  .tooltip {
+    pointer-events: none;
+  }
+
+  text.tooltip {
+    text-shadow: 2px 2px 10px black;
+    font-size: 14px;
+    fill: #fff;
+    padding: 0;
+
+    &.date {
+      font-size: 11px;
     }
   }
 

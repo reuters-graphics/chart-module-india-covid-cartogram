@@ -60,14 +60,34 @@ Follow the notes below! -->
 
 <div class="chart-options">
   <!-- ✏️ Create buttons that update your data/props variables when they're clicked! -->
-  <button
-    on:click={() => {
-      chartData = getRandomData();
-    }}>New data</button>
-  <button
-    on:click={() => {
-      circleFill = circleFill === 'orange' ? 'steelblue' : 'orange';
-    }}>Change fill</button>
+  
+    <button on:click={() => {
+      chartProps.cat = 'cases'
+      console.log(chartProps);
+    }}
+    >Cases
+    </button>
+    <button on:click={() => {
+      chartProps.cat = 'deaths'
+      console.log(chartProps);
+    }}
+    >Deaths
+    </button>
+    <button on:click={() => {
+      chartProps.scaleType = 'adjusted';
+      console.log('adjusted');
+    }}
+    >Adjusted scale
+    </button>
+    <button on:click={() => {
+      chartProps.scaleType = 'uniform';
+      console.log('uniform');
+    }}
+    >Uniform scale
+    </button>
+
+
+
 </div>
 
 <!-- ⚙️ These components will automatically create interactive documentation for you chart! -->
