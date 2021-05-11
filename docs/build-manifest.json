@@ -248,7 +248,7 @@
       ]
     },
     "dist/data/india_states_meta.json.proxy.js": {
-      "bytes": 1728,
+      "bytes": 2376,
       "imports": []
     },
     "_snowpack/pkg/@reuters-graphics/d3-locale.js": {
@@ -265,7 +265,7 @@
       ]
     },
     "dist/js/index.js": {
-      "bytes": 10341,
+      "bytes": 11250,
       "imports": [
         {
           "path": "_snowpack/pkg/d3.js",
@@ -466,13 +466,13 @@
           "bytesInOutput": 11840
         },
         "dist/data/india_states_meta.json.proxy.js": {
-          "bytesInOutput": 1493
+          "bytesInOutput": 2069
         },
         "_snowpack/pkg/@reuters-graphics/d3-locale.js": {
           "bytesInOutput": 11283
         },
         "dist/js/index.js": {
-          "bytesInOutput": 4758
+          "bytesInOutput": 4926
         },
         "dist/js/india-sample.json.proxy.js": {
           "bytesInOutput": 102697
@@ -487,7 +487,7 @@
           "bytesInOutput": 44
         }
       },
-      "bytes": 1408064
+      "bytes": 1408808
     },
     "../~~bundle~~/dist/demo/App/index.css": {
       "imports": [],

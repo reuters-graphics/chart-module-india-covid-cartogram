@@ -1,8 +1,6 @@
 import * as d3 from 'd3';
 import * as utils from './utils.js';
-import {
-  appendSelect
-} from 'd3-appendselect';
+import { appendSelect } from 'd3-appendselect';
 import merge from 'lodash/merge';
 import meta from '../data/india_states_meta.json';
 import D3Locale from '@reuters-graphics/d3-locale';
@@ -66,7 +64,7 @@ class MyChartModule {
 
         let obj = {
           val: d,
-          avg7day: lastWeek.length == 7 ? d3.mean(lastWeek) : null
+          avg7day: lastWeek.length == 7 ? d3.mean(lastWeek) : null,
         };
 
         series.push(obj);
@@ -79,7 +77,7 @@ class MyChartModule {
         key: key,
         name: data.states[key].name,
         max: d3.max(series, (d) => d[props.lineVar]),
-        series: series
+        series: series,
       };
 
       //If not mobile, pull the rows and column assignments from the metadata
@@ -166,15 +164,10 @@ class MyChartModule {
     const dateFormat = locale.formatTime('%b. %d');
     const numberFormat = locale.format(',');
 
-    const {
-      margin,
-      innerMargin
-    } = props;
+    const { margin, innerMargin } = props;
 
     const container = this.selection().node();
-    const {
-      width: containerWidth
-    } = container.getBoundingClientRect(); // Respect the width of your container!
+    const { width: containerWidth } = container.getBoundingClientRect(); // Respect the width of your container!
 
     const width = containerWidth - margin.left - margin.right;
 
@@ -188,7 +181,6 @@ class MyChartModule {
       props.innerMargin.right = 5;
       props.innerMargin.bottom = 10;
       props.innerMargin.left = 5;
-
     }
 
     let wh = width / props.cols; //width and height of squares for our grid.
@@ -314,11 +306,11 @@ class MyChartModule {
         let index = Math.round(inverseX(mx));
 
         index =
-          index < 0 ?
-          0 :
-          index >= data.series.length ?
-          data.series.length - 2 :
-          index;
+          index < 0
+            ? 0
+            : index >= data.series.length
+            ? data.series.length - 2
+            : index;
 
         const datum = d.series[index];
         const datumY = datum[props.lineVar];

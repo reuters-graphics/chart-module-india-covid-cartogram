@@ -57,149 +57,221 @@ d3Format.formatLocale({
 
 var AN = {
 	name: "Andaman and Nicobar Islands",
-	pop_2020: 417036
+	" pop_2020 ": 417036,
+	col: 7,
+	row: 7
 };
 var AP = {
 	name: "Andhra Pradesh",
-	pop_2020: 53903393
+	" pop_2020 ": 53903393,
+	col: 5,
+	row: 5
 };
 var AR = {
 	name: "Arunachal Pradesh",
-	pop_2020: 1570458
+	" pop_2020 ": 1570458,
+	col: 9,
+	row: 2
 };
 var AS = {
 	name: "Assam",
-	pop_2020: 35607039
+	" pop_2020 ": 35607039,
+	col: 7,
+	row: 2
 };
 var BR = {
 	name: "Bihar",
-	pop_2020: 124799926
+	" pop_2020 ": 124799926,
+	col: 6,
+	row: 3
 };
 var CH = {
 	name: "Chandigarh",
-	pop_2020: 1158473
+	" pop_2020 ": 1158473,
+	col: 3,
+	row: 3
 };
 var CT = {
 	name: "Chhattisgarh",
-	pop_2020: 29436231
+	" pop_2020 ": 29436231,
+	col: 5,
+	row: 4
 };
 var DN = {
 	name: "Dadra and Nagar Haveli and Daman and Diu",
-	pop_2020: 615724
+	" pop_2020 ": 615724,
+	col: 2,
+	row: 5
 };
 var DL = {
 	name: "Delhi",
-	pop_2020: 18710922
+	" pop_2020 ": 18710922,
+	col: 3,
+	row: 4
 };
 var GA = {
 	name: "Goa",
-	pop_2020: 1586250
+	" pop_2020 ": 1586250,
+	col: 3,
+	row: 6
 };
 var GJ = {
 	name: "Gujarat",
-	pop_2020: 63872399
+	" pop_2020 ": 63872399,
+	col: 1,
+	row: 4
 };
 var HR = {
 	name: "Haryana",
-	pop_2020: 28204692
+	" pop_2020 ": 28204692,
+	col: 2,
+	row: 3
 };
 var HP = {
 	name: "Himachal Pradesh",
-	pop_2020: 7451955
+	" pop_2020 ": 7451955,
+	col: 4,
+	row: 2
 };
 var JK = {
 	name: "Jammu and Kashmir",
-	pop_2020: 13606320
+	" pop_2020 ": 13606320,
+	col: 3,
+	row: 1
 };
 var JH = {
 	name: "Jharkhand",
-	pop_2020: 38593948
+	" pop_2020 ": 38593948,
+	col: 6,
+	row: 4
 };
 var KA = {
 	name: "Karnataka",
-	pop_2020: 67562686
+	" pop_2020 ": 67562686,
+	col: 4,
+	row: 6
 };
 var KL = {
 	name: "Kerala",
-	pop_2020: 35699443
+	" pop_2020 ": 35699443,
+	col: 4,
+	row: 7
 };
 var LA = {
 	name: "Ladakh",
-	pop_2020: 289023
+	" pop_2020 ": 289023,
+	col: 4,
+	row: 1
 };
 var LD = {
 	name: "Lakshadweep",
-	pop_2020: 73183
+	" pop_2020 ": 73183,
+	col: 3,
+	row: 7
 };
 var MP = {
 	name: "Madhya Pradesh",
-	pop_2020: 85358965
+	" pop_2020 ": 85358965,
+	col: 4,
+	row: 4
 };
 var MH = {
 	name: "Maharashtra",
-	pop_2020: 123144223
+	" pop_2020 ": 123144223,
+	col: 3,
+	row: 5
 };
 var MN = {
 	name: "Manipur",
-	pop_2020: 3091545
+	" pop_2020 ": 3091545,
+	col: 9,
+	row: 3
 };
 var ML = {
 	name: "Meghalaya",
-	pop_2020: 3366710
+	" pop_2020 ": 3366710,
+	col: 8,
+	row: 3
 };
 var MZ = {
 	name: "Mizoram",
-	pop_2020: 1239244
+	" pop_2020 ": 1239244,
+	col: 9,
+	row: 4
 };
 var NL = {
 	name: "Nagaland",
-	pop_2020: 2249695
+	" pop_2020 ": 2249695,
+	col: 8,
+	row: 2
 };
 var OR = {
 	name: "Odisha",
-	pop_2020: 46356334
+	" pop_2020 ": 46356334,
+	col: 6,
+	row: 5
 };
 var PY = {
 	name: "Puducherry",
-	pop_2020: 1413542
+	" pop_2020 ": 1413542,
+	col: 5,
+	row: 6
 };
 var PB = {
 	name: "Punjab",
-	pop_2020: 30141373
+	" pop_2020 ": 30141373,
+	col: 3,
+	row: 2
 };
 var RJ = {
 	name: "Rajasthan",
-	pop_2020: 81032689
+	" pop_2020 ": 81032689,
+	col: 2,
+	row: 4
 };
 var SK = {
 	name: "Sikkim",
-	pop_2020: 690251
+	" pop_2020 ": 690251,
+	col: 7,
+	row: 3
 };
 var TN = {
 	name: "Tamil Nadu",
-	pop_2020: 77841267
+	" pop_2020 ": 77841267,
+	col: 4,
+	row: 8
 };
 var TG = {
 	name: "Telangana",
-	pop_2020: 38510982
+	" pop_2020 ": 38510982,
+	col: 4,
+	row: 5
 };
 var TR = {
 	name: "Tripura",
-	pop_2020: 4169794
+	" pop_2020 ": 4169794,
+	col: 8,
+	row: 4
 };
 var UP = {
 	name: "Uttar Pradesh",
-	pop_2020: 237882725
+	" pop_2020 ": 237882725,
+	col: 5,
+	row: 3
 };
 var UT = {
 	name: "Uttarakhand",
-	pop_2020: 11250858
+	" pop_2020 ": 11250858,
+	col: 4,
+	row: 3
 };
 var WB = {
 	name: "West Bengal",
-	pop_2020: 99609303
+	" pop_2020 ": 99609303,
+	col: 7,
+	row: 4
 };
-var pop = {
+var meta = {
 	AN: AN,
 	AP: AP,
 	AR: AR,
@@ -250,8 +322,7 @@ var MyChartModule = /*#__PURE__*/function () {
     _classCallCheck(this, MyChartModule);
 
     _defineProperty(this, "defaultProps", {
-      aspectHeight: 0.7,
-      cols: 8,
+      cols: 9,
       rows: 8,
       cat: 'cases',
       lineVar: 'avg7day',
@@ -259,10 +330,10 @@ var MyChartModule = /*#__PURE__*/function () {
       stroke: '#888',
       strokeWidth: 1.5,
       margin: {
-        top: 20,
-        right: 20,
-        bottom: 25,
-        left: 30
+        top: 10,
+        right: 10,
+        bottom: 15,
+        left: 10
       },
       innerMargin: {
         top: 10,
@@ -270,7 +341,6 @@ var MyChartModule = /*#__PURE__*/function () {
         bottom: 20,
         left: 10
       },
-      fill: 'grey',
       chart_formats: {
         // Format number for axis
         number: '~s',
@@ -308,22 +378,28 @@ var MyChartModule = /*#__PURE__*/function () {
   }, {
     key: "getStatesArray",
     value: function getStatesArray(data, props) {
+      /*  THIS IS WHERE WE FORMAT OUR DATA TO DRAW THE CHARTS
+          1) CREATE AN OBJECT FOR EACH STATE
+          2) GET THE COL AND ROW FOR EACH STATE FROM `meta` LOOKUP
+          3) IF MOBILE, CALCULATE GRID PLACEMENT BASED ON SCREEN WIDTH
+          4) CREATE SERIES FOR EACH STATE BASED ON VALUE OF `props.cat` ('deaths' OR 'cases')
+      */
       //Create empty array to return at the end of this function.
-      var statesArray = []; //Default to a simple grid.
+      var statesArray = []; //Default to a 6 column grid (not a cartogram)
       //Use rowIndex and colIndex to keep track of rows and columns.
 
-      var rowIndex = 0;
-      var colIndex = 0;
+      var rowIndex = 1;
+      var colIndex = 1;
       Object.keys(data.states).forEach(function (key, i) {
         //If index is divisible by the number of columns
         //Start a new row and reset the column to 0.
         if (i % props.cols == 0 && i > 2) {
           rowIndex++;
-          colIndex = 0;
-        } //Format our data to include per 100K and 7day average.
+          colIndex = 1;
+        } //Format our data to include 7day average.
 
 
-        pop[key].pop_2020;
+        meta[key].pop_2020;
         var series = [];
         data.states[key].reported[props.cat].forEach(function (d, index) {
           var lastWeek = data.states[key].reported[props.cat].slice(index - 6, index + 1).filter(function (d) {
@@ -331,32 +407,41 @@ var MyChartModule = /*#__PURE__*/function () {
           });
           var obj = {
             val: d,
-            avg7day: lastWeek.length == 7 ? d3.mean(lastWeek) : null //per100k: d ? ((d / pop2020) * 100000)
-
+            avg7day: lastWeek.length == 7 ? d3.mean(lastWeek) : null
           };
           series.push(obj);
-        });
+        }); //Package each state as an object.
+
         var obj = {
           row: rowIndex,
           col: colIndex,
           key: key,
           name: data.states[key].name,
-          series: series,
           max: d3.max(series, function (d) {
             return d[props.lineVar];
-          })
-        };
+          }),
+          series: series
+        }; //If not mobile, pull the rows and column assignments from the metadata
+
+        if (!props.isMobile) {
+          obj.col = meta[key].col;
+          obj.row = meta[key].row;
+        }
+
         statesArray.push(obj);
         colIndex++; //Tick up column index
-      });
+      }); //Get the max value of all max values for the uniform scale version.
+
       props.uniformMax = d3.max(statesArray, function (d) {
         return d.max;
-      });
+      }); //Return our formatted data as an array.
+
       return statesArray;
     }
   }, {
     key: "getArrow",
     value: function getArrow(numbers) {
+      /* LOGIC TAKEN FROM GURMAN'S US CARTOGRAM ARROWS */
       var downArrow = '<svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="caret-down" class="svg-inline--fa fa-caret-down fa-w-10 " role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path fill="currentColor" d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"></path></svg>';
       var upArrow = '<svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="caret-up" class="svg-inline--fa fa-caret-up fa-w-10 " role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path fill="currentColor" d="M288.662 352H31.338c-17.818 0-26.741-21.543-14.142-34.142l128.662-128.662c7.81-7.81 20.474-7.81 28.284 0l128.662 128.662c12.6 12.599 3.676 34.142-14.142 34.142z"></path></svg>';
       var latest = numbers[numbers.length - 2].val;
@@ -397,10 +482,22 @@ var MyChartModule = /*#__PURE__*/function () {
 
 
       var width = containerWidth - margin.left - margin.right;
-      var height = containerWidth * props.aspectHeight - margin.top - margin.bottom;
-      var wh = width / props.cols;
-      var xGridDom = d3.range(0, props.cols);
-      var yGridDom = d3.range(0, props.rows);
+      props.isMobile = width < 500;
+
+      if (props.isMobile) {
+        props.cols = 6;
+        props.rows = Object.keys(data.states).length / 6;
+        props.innerMargin.top = 5;
+        props.innerMargin.right = 5;
+        props.innerMargin.bottom = 10;
+        props.innerMargin.left = 5;
+      }
+
+      var wh = width / props.cols; //width and height of squares for our grid.
+
+      var height = wh * props.rows;
+      var xGridDom = d3.range(1, props.cols + 1);
+      var yGridDom = d3.range(1, props.rows + 1);
       var statesArray = this.getStatesArray(data, props);
       var xGridScale = d3.scaleBand().rangeRound([0, wh * props.cols]).padding(0.05).domain(xGridDom);
       var yGridScale = d3.scaleBand().rangeRound([0, wh * props.rows]).padding(0.05).domain(yGridDom);
@@ -416,8 +513,7 @@ var MyChartModule = /*#__PURE__*/function () {
       });
       this.selection().selectAll('div.state-name').data(statesArray, function (d) {
         return d.key;
-      }).join('div').attr('class', 'state-name') //.html(d=> d.key)
-      .html(function (d) {
+      }).join('div').attr('class', 'state-name').html(function (d) {
         return "".concat(_this.getArrow(d.series), " <p>").concat(d.key, "</p>");
       }).style('left', function (d) {
         var xPos = xGridScale(d.col) + margin.left;
