@@ -30,7 +30,7 @@ module.exports = {
   },
   buildOptions: {
     out: 'docs',
-    baseUrl: '/chart-module-my-chart-module/',
+    baseUrl: '/chart-module-india-covid-cartogram/',
   },
   optimize: {
     bundle: true,
