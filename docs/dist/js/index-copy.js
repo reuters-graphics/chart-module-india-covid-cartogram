@@ -1,7 +1,7 @@
-import * as d3 from 'd3';
-import { appendSelect } from 'd3-appendselect';
-import merge from 'lodash/merge';
-import pop from '../data/india_states_meta.json';
+import * as d3 from '../../_snowpack/pkg/d3.js';
+import { appendSelect } from '../../_snowpack/pkg/d3-appendselect.js';
+import merge from '../../_snowpack/pkg/lodash/merge.js';
+import pop from '../data/india_states_meta.json.proxy.js';
 
 d3.selection.prototype.appendSelect = appendSelect;
 

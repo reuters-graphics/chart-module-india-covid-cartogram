@@ -1,6 +1,6 @@
-import ChartComponent from './base/ChartComponent';
-import D3Locale from '@reuters-graphics/d3-locale';
-import d3 from './d3';
+import ChartComponent from './base/ChartComponent.js';
+import D3Locale from '../../_snowpack/pkg/@reuters-graphics/d3-locale.js';
+import d3 from './d3.js';
 
 class USStateCartogram extends ChartComponent {
   defaultProps = {
