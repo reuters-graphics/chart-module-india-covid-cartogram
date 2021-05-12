@@ -13,11 +13,16 @@ $half-white: hsla(0, 0%, 100%, .75);
 
   .state-name {
     position: absolute;
+    line-height: 1.1;
 
-    p {
+    span.display {
       color: $half-white;
       font-size: .8rem;
       font-weight: 200;
+      font-stretch: ultra-condensed;
+      position: relative;
+      left: .625rem;
+      display: inline-block;
     }
 
     p,
@@ -30,6 +35,8 @@ $half-white: hsla(0, 0%, 100%, .75);
 
     svg {
       width: .625em;
+      position: absolute;
+      left: -.1rem;
     }
 
     .fa-caret-down {

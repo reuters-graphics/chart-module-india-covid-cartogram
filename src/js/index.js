@@ -258,12 +258,13 @@ class MyChartModule {
       .join('div')
       .attr('class', 'state-name')
       .html((d) => {
+        let display = meta[d.key].short.replace('-', '-<br/>');
 
-        let display = meta[d.key].short.replace('-','-<br/>');
-        
         display = display.replace('Kashmir', '<br/>Kashmir');
 
-        return `${this.getArrow(d.series)}<span class='display'>${display}</span>`;
+        return `${this.getArrow(
+          d.series
+        )}<span class='display'>${display}</span>`;
       })
       .style('width', `${wh}px`)
       .style('left', (d) => {

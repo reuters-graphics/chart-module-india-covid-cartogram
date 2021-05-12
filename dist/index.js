@@ -57,218 +57,254 @@ d3Format.formatLocale({
 
 var AN = {
 	name: "Andaman and Nicobar Islands",
+	short: "A & N Isl.",
 	pop_2020: 417036,
-	col: 7,
+	col: 6,
 	row: 7
 };
 var AP = {
 	name: "Andhra Pradesh",
+	short: "Andhra Pr.",
 	pop_2020: 53903393,
-	col: 5,
+	col: 4,
 	row: 5
 };
 var AR = {
 	name: "Arunachal Pradesh",
+	short: "Arunachal Pr.",
 	pop_2020: 1570458,
-	col: 9,
+	col: 8,
 	row: 2
 };
 var AS = {
 	name: "Assam",
+	short: "Assam",
 	pop_2020: 35607039,
-	col: 7,
+	col: 6,
 	row: 2
 };
 var BR = {
 	name: "Bihar",
+	short: "Bihar",
 	pop_2020: 124799926,
-	col: 6,
+	col: 5,
 	row: 3
 };
 var CH = {
 	name: "Chandigarh",
+	short: "Chand-igarh",
 	pop_2020: 1158473,
-	col: 3,
+	col: 2,
 	row: 3
 };
 var CT = {
 	name: "Chhattisgarh",
+	short: "Chhatt-isgarh",
 	pop_2020: 29436231,
-	col: 5,
+	col: 4,
 	row: 4
 };
 var DN = {
 	name: "Dadra and Nagar Haveli and Daman and Diu",
+	short: "DNH/DD",
 	pop_2020: 615724,
-	col: 2,
-	row: 5
+	col: 1,
+	row: 6
 };
 var DL = {
 	name: "Delhi",
+	short: "Delhi",
 	pop_2020: 18710922,
-	col: 3,
+	col: 2,
 	row: 4
 };
 var GA = {
 	name: "Goa",
+	short: "Goa",
 	pop_2020: 1586250,
-	col: 3,
+	col: 2,
 	row: 6
 };
 var GJ = {
 	name: "Gujarat",
+	short: "Gujarat",
 	pop_2020: 63872399,
 	col: 1,
-	row: 4
+	row: 5
 };
 var HR = {
 	name: "Haryana",
+	short: "Haryana",
 	pop_2020: 28204692,
-	col: 2,
+	col: 1,
 	row: 3
 };
 var HP = {
 	name: "Himachal Pradesh",
+	short: "Himachal Pr.",
 	pop_2020: 7451955,
-	col: 4,
+	col: 3,
 	row: 2
 };
 var JK = {
 	name: "Jammu and Kashmir",
+	short: "Jammu & Kashmir",
 	pop_2020: 13606320,
-	col: 3,
+	col: 2,
 	row: 1
 };
 var JH = {
 	name: "Jharkhand",
+	short: "Jharkhand",
 	pop_2020: 38593948,
-	col: 6,
+	col: 5,
 	row: 4
 };
 var KA = {
 	name: "Karnataka",
+	short: "Karnataka",
 	pop_2020: 67562686,
-	col: 4,
+	col: 3,
 	row: 6
 };
 var KL = {
 	name: "Kerala",
+	short: "Kerala",
 	pop_2020: 35699443,
-	col: 4,
+	col: 3,
 	row: 7
 };
 var LA = {
 	name: "Ladakh",
+	short: "Ladakh",
 	pop_2020: 289023,
-	col: 4,
+	col: 3,
 	row: 1
 };
 var LD = {
 	name: "Lakshadweep",
+	short: "Lakshad-weep",
 	pop_2020: 73183,
-	col: 3,
+	col: 2,
 	row: 7
 };
 var MP = {
 	name: "Madhya Pradesh",
+	short: "Madhya Pr.",
 	pop_2020: 85358965,
-	col: 4,
+	col: 3,
 	row: 4
 };
 var MH = {
 	name: "Maharashtra",
+	short: "Mahar-ashtra",
 	pop_2020: 123144223,
-	col: 3,
+	col: 2,
 	row: 5
 };
 var MN = {
 	name: "Manipur",
+	short: "Manipur",
 	pop_2020: 3091545,
-	col: 9,
+	col: 8,
 	row: 3
 };
 var ML = {
 	name: "Meghalaya",
+	short: "Meghalaya",
 	pop_2020: 3366710,
-	col: 8,
+	col: 7,
 	row: 3
 };
 var MZ = {
 	name: "Mizoram",
+	short: "Mizoram",
 	pop_2020: 1239244,
-	col: 9,
+	col: 8,
 	row: 4
 };
 var NL = {
 	name: "Nagaland",
+	short: "Nagaland",
 	pop_2020: 2249695,
-	col: 8,
+	col: 7,
 	row: 2
 };
 var OR = {
 	name: "Odisha",
+	short: "Odisha",
 	pop_2020: 46356334,
-	col: 6,
+	col: 5,
 	row: 5
 };
 var PY = {
 	name: "Puducherry",
+	short: "Puducherry",
 	pop_2020: 1413542,
-	col: 5,
+	col: 4,
 	row: 6
 };
 var PB = {
 	name: "Punjab",
+	short: "Punjab",
 	pop_2020: 30141373,
-	col: 3,
+	col: 2,
 	row: 2
 };
 var RJ = {
 	name: "Rajasthan",
+	short: "Rajasthan",
 	pop_2020: 81032689,
-	col: 2,
+	col: 1,
 	row: 4
 };
 var SK = {
 	name: "Sikkim",
+	short: "Sikkim",
 	pop_2020: 690251,
-	col: 7,
+	col: 6,
 	row: 3
 };
 var TN = {
 	name: "Tamil Nadu",
+	short: "Tamil Nadu",
 	pop_2020: 77841267,
-	col: 4,
+	col: 3,
 	row: 8
 };
 var TG = {
 	name: "Telangana",
+	short: "Telangana",
 	pop_2020: 38510982,
-	col: 4,
+	col: 3,
 	row: 5
 };
 var TR = {
 	name: "Tripura",
+	short: "Tripura",
 	pop_2020: 4169794,
-	col: 8,
+	col: 7,
 	row: 4
 };
 var UP = {
 	name: "Uttar Pradesh",
+	short: "Uttar Pr.",
 	pop_2020: 237882725,
-	col: 5,
+	col: 4,
 	row: 3
 };
 var UT = {
 	name: "Uttarakhand",
+	short: "Uttara-khand",
 	pop_2020: 11250858,
-	col: 4,
+	col: 3,
 	row: 3
 };
 var WB = {
 	name: "West Bengal",
+	short: "W. Bengal",
 	pop_2020: 99609303,
-	col: 7,
+	col: 6,
 	row: 4
 };
 var meta = {
@@ -322,7 +358,7 @@ var MyChartModule = /*#__PURE__*/function () {
     _classCallCheck(this, MyChartModule);
 
     _defineProperty(this, "defaultProps", {
-      cols: 9,
+      cols: 8,
       rows: 8,
       cat: 'cases',
       lineVar: 'avg7day',
@@ -336,7 +372,7 @@ var MyChartModule = /*#__PURE__*/function () {
         left: 10
       },
       innerMargin: {
-        top: 10,
+        top: 24,
         right: 10,
         bottom: 20,
         left: 10
@@ -487,13 +523,12 @@ var MyChartModule = /*#__PURE__*/function () {
       props.isMobile = width < 500;
 
       if (props.isMobile) {
-        props.cols = 6;
-        props.rows = Object.keys(data.states).length / 6; //SMALLER INNER MARGINS.
-
-        props.innerMargin.top = 5;
-        props.innerMargin.right = 5;
-        props.innerMargin.bottom = 10;
-        props.innerMargin.left = 5;
+        props.cols = 4;
+        props.rows = Object.keys(data.states).length / props.cols; //SMALLER INNER MARGINS.
+        //props.innerMargin.top = 5;
+        // props.innerMargin.right = 5;
+        // props.innerMargin.bottom = 10;
+        //props.innerMargin.left = 5;
       }
 
       var wh = width / props.cols; //width and height of squares for our grid.
@@ -522,8 +557,10 @@ var MyChartModule = /*#__PURE__*/function () {
       this.selection().selectAll('div.state-name').data(statesArray, function (d) {
         return d.key;
       }).join('div').attr('class', 'state-name').html(function (d) {
-        return "".concat(_this.getArrow(d.series), " <p>").concat(d.key, "</p>");
-      }).style('left', function (d) {
+        var display = meta[d.key]["short"].replace('-', '-<br/>');
+        display = display.replace('Kashmir', '<br/>Kashmir');
+        return "".concat(_this.getArrow(d.series), "<span class='display'>").concat(display, "</span>");
+      }).style('width', "".concat(wh, "px")).style('left', function (d) {
         var xPos = xGridScale(d.col) + margin.left;
         return "".concat(xPos, "px");
       }).style('top', function (d) {
