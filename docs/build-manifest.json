@@ -1,22 +1,22 @@
 {
   "inputs": {
     "dist/scss/demo.css": {
-      "bytes": 309975,
+      "bytes": 309646,
       "imports": []
     },
     "dist/demo/App/App.svelte.css": {
       "bytes": 43,
       "imports": []
     },
-    "_snowpack/pkg/common/index-24c67e07.js": {
-      "bytes": 15094,
+    "_snowpack/pkg/common/index-2f5d26cd.js": {
+      "bytes": 15183,
       "imports": []
     },
     "_snowpack/pkg/svelte/internal.js": {
       "bytes": 472,
       "imports": [
         {
-          "path": "_snowpack/pkg/common/index-24c67e07.js",
+          "path": "_snowpack/pkg/common/index-2f5d26cd.js",
           "kind": "import-statement"
         }
       ]
@@ -50,7 +50,7 @@
       "bytes": 2587,
       "imports": [
         {
-          "path": "_snowpack/pkg/common/index-24c67e07.js",
+          "path": "_snowpack/pkg/common/index-2f5d26cd.js",
           "kind": "import-statement"
         }
       ]
@@ -81,10 +81,10 @@
       "imports": []
     },
     "_snowpack/pkg/svelte.js": {
-      "bytes": 63,
+      "bytes": 77,
       "imports": [
         {
-          "path": "_snowpack/pkg/common/index-24c67e07.js",
+          "path": "_snowpack/pkg/common/index-2f5d26cd.js",
           "kind": "import-statement"
         }
       ]
@@ -101,7 +101,7 @@
       "bytes": 41005,
       "imports": [
         {
-          "path": "_snowpack/pkg/common/index-24c67e07.js",
+          "path": "_snowpack/pkg/common/index-2f5d26cd.js",
           "kind": "import-statement"
         },
         {
@@ -173,7 +173,7 @@
       "bytes": 58252,
       "imports": [
         {
-          "path": "_snowpack/pkg/common/index-24c67e07.js",
+          "path": "_snowpack/pkg/common/index-2f5d26cd.js",
           "kind": "import-statement"
         }
       ]
@@ -248,7 +248,7 @@
       ]
     },
     "dist/data/india_states_meta.json.proxy.js": {
-      "bytes": 2376,
+      "bytes": 2304,
       "imports": []
     },
     "_snowpack/pkg/@reuters-graphics/d3-locale.js": {
@@ -265,7 +265,7 @@
       ]
     },
     "dist/js/index.js": {
-      "bytes": 11250,
+      "bytes": 11834,
       "imports": [
         {
           "path": "_snowpack/pkg/d3.js",
@@ -298,7 +298,7 @@
       "imports": []
     },
     "dist/demo/Chart.svelte.js": {
-      "bytes": 6294,
+      "bytes": 6897,
       "imports": [
         {
           "path": "dist/demo/Chart.svelte.css",
@@ -326,6 +326,10 @@
         },
         {
           "path": "dist/js/india-sample.json.proxy.js",
+          "kind": "import-statement"
+        },
+        {
+          "path": "_snowpack/pkg/d3.js",
           "kind": "import-statement"
         }
       ]
@@ -370,10 +374,10 @@
       "imports": [],
       "inputs": {
         "dist/scss/demo.css": {
-          "bytesInOutput": 251835
+          "bytesInOutput": 251357
         }
       },
-      "bytes": 251853
+      "bytes": 251375
     },
     "../~~bundle~~/dist/demo/App/index.js": {
       "imports": [],
@@ -384,8 +388,8 @@
         "dist/demo/App/App.svelte.css": {
           "bytesInOutput": 0
         },
-        "_snowpack/pkg/common/index-24c67e07.js": {
-          "bytesInOutput": 5317
+        "_snowpack/pkg/common/index-2f5d26cd.js": {
+          "bytesInOutput": 5357
         },
         "_snowpack/pkg/svelte/internal.js": {
           "bytesInOutput": 0
@@ -406,7 +410,7 @@
           "bytesInOutput": 1018
         },
         "dist/demo/App/ChartContainer.svelte.js": {
-          "bytesInOutput": 2503
+          "bytesInOutput": 2527
         },
         "dist/demo/Chart.svelte.css": {
           "bytesInOutput": 0
@@ -439,7 +443,7 @@
           "bytesInOutput": 0
         },
         "_snowpack/pkg/svelte-json-tree.js": {
-          "bytesInOutput": 22571
+          "bytesInOutput": 22566
         },
         "dist/demo/App/Explorer.svelte.js": {
           "bytesInOutput": 761
@@ -448,10 +452,10 @@
           "bytesInOutput": 11995
         },
         "_snowpack/pkg/d3.js": {
-          "bytesInOutput": 132767
+          "bytesInOutput": 132752
         },
         "_snowpack/pkg/common/locale-27ba713c.js": {
-          "bytesInOutput": 4475
+          "bytesInOutput": 4478
         },
         "_snowpack/pkg/d3-format.js": {
           "bytesInOutput": 0
@@ -466,19 +470,19 @@
           "bytesInOutput": 11840
         },
         "dist/data/india_states_meta.json.proxy.js": {
-          "bytesInOutput": 2069
+          "bytesInOutput": 1925
         },
         "_snowpack/pkg/@reuters-graphics/d3-locale.js": {
           "bytesInOutput": 11283
         },
         "dist/js/index.js": {
-          "bytesInOutput": 4926
+          "bytesInOutput": 4998
         },
         "dist/js/india-sample.json.proxy.js": {
           "bytesInOutput": 102697
         },
         "dist/demo/Chart.svelte.js": {
-          "bytesInOutput": 2068
+          "bytesInOutput": 2426
         },
         "dist/demo/App/App.svelte.js": {
           "bytesInOutput": 894
@@ -487,7 +491,7 @@
           "bytesInOutput": 44
         }
       },
-      "bytes": 1408808
+      "bytes": 1409141
     },
     "../~~bundle~~/dist/demo/App/index.css": {
       "imports": [],

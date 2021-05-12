@@ -57,217 +57,217 @@ d3Format.formatLocale({
 
 var AN = {
 	name: "Andaman and Nicobar Islands",
-	" pop_2020 ": 417036,
+	pop_2020: 417036,
 	col: 7,
 	row: 7
 };
 var AP = {
 	name: "Andhra Pradesh",
-	" pop_2020 ": 53903393,
+	pop_2020: 53903393,
 	col: 5,
 	row: 5
 };
 var AR = {
 	name: "Arunachal Pradesh",
-	" pop_2020 ": 1570458,
+	pop_2020: 1570458,
 	col: 9,
 	row: 2
 };
 var AS = {
 	name: "Assam",
-	" pop_2020 ": 35607039,
+	pop_2020: 35607039,
 	col: 7,
 	row: 2
 };
 var BR = {
 	name: "Bihar",
-	" pop_2020 ": 124799926,
+	pop_2020: 124799926,
 	col: 6,
 	row: 3
 };
 var CH = {
 	name: "Chandigarh",
-	" pop_2020 ": 1158473,
+	pop_2020: 1158473,
 	col: 3,
 	row: 3
 };
 var CT = {
 	name: "Chhattisgarh",
-	" pop_2020 ": 29436231,
+	pop_2020: 29436231,
 	col: 5,
 	row: 4
 };
 var DN = {
 	name: "Dadra and Nagar Haveli and Daman and Diu",
-	" pop_2020 ": 615724,
+	pop_2020: 615724,
 	col: 2,
 	row: 5
 };
 var DL = {
 	name: "Delhi",
-	" pop_2020 ": 18710922,
+	pop_2020: 18710922,
 	col: 3,
 	row: 4
 };
 var GA = {
 	name: "Goa",
-	" pop_2020 ": 1586250,
+	pop_2020: 1586250,
 	col: 3,
 	row: 6
 };
 var GJ = {
 	name: "Gujarat",
-	" pop_2020 ": 63872399,
+	pop_2020: 63872399,
 	col: 1,
 	row: 4
 };
 var HR = {
 	name: "Haryana",
-	" pop_2020 ": 28204692,
+	pop_2020: 28204692,
 	col: 2,
 	row: 3
 };
 var HP = {
 	name: "Himachal Pradesh",
-	" pop_2020 ": 7451955,
+	pop_2020: 7451955,
 	col: 4,
 	row: 2
 };
 var JK = {
 	name: "Jammu and Kashmir",
-	" pop_2020 ": 13606320,
+	pop_2020: 13606320,
 	col: 3,
 	row: 1
 };
 var JH = {
 	name: "Jharkhand",
-	" pop_2020 ": 38593948,
+	pop_2020: 38593948,
 	col: 6,
 	row: 4
 };
 var KA = {
 	name: "Karnataka",
-	" pop_2020 ": 67562686,
+	pop_2020: 67562686,
 	col: 4,
 	row: 6
 };
 var KL = {
 	name: "Kerala",
-	" pop_2020 ": 35699443,
+	pop_2020: 35699443,
 	col: 4,
 	row: 7
 };
 var LA = {
 	name: "Ladakh",
-	" pop_2020 ": 289023,
+	pop_2020: 289023,
 	col: 4,
 	row: 1
 };
 var LD = {
 	name: "Lakshadweep",
-	" pop_2020 ": 73183,
+	pop_2020: 73183,
 	col: 3,
 	row: 7
 };
 var MP = {
 	name: "Madhya Pradesh",
-	" pop_2020 ": 85358965,
+	pop_2020: 85358965,
 	col: 4,
 	row: 4
 };
 var MH = {
 	name: "Maharashtra",
-	" pop_2020 ": 123144223,
+	pop_2020: 123144223,
 	col: 3,
 	row: 5
 };
 var MN = {
 	name: "Manipur",
-	" pop_2020 ": 3091545,
+	pop_2020: 3091545,
 	col: 9,
 	row: 3
 };
 var ML = {
 	name: "Meghalaya",
-	" pop_2020 ": 3366710,
+	pop_2020: 3366710,
 	col: 8,
 	row: 3
 };
 var MZ = {
 	name: "Mizoram",
-	" pop_2020 ": 1239244,
+	pop_2020: 1239244,
 	col: 9,
 	row: 4
 };
 var NL = {
 	name: "Nagaland",
-	" pop_2020 ": 2249695,
+	pop_2020: 2249695,
 	col: 8,
 	row: 2
 };
 var OR = {
 	name: "Odisha",
-	" pop_2020 ": 46356334,
+	pop_2020: 46356334,
 	col: 6,
 	row: 5
 };
 var PY = {
 	name: "Puducherry",
-	" pop_2020 ": 1413542,
+	pop_2020: 1413542,
 	col: 5,
 	row: 6
 };
 var PB = {
 	name: "Punjab",
-	" pop_2020 ": 30141373,
+	pop_2020: 30141373,
 	col: 3,
 	row: 2
 };
 var RJ = {
 	name: "Rajasthan",
-	" pop_2020 ": 81032689,
+	pop_2020: 81032689,
 	col: 2,
 	row: 4
 };
 var SK = {
 	name: "Sikkim",
-	" pop_2020 ": 690251,
+	pop_2020: 690251,
 	col: 7,
 	row: 3
 };
 var TN = {
 	name: "Tamil Nadu",
-	" pop_2020 ": 77841267,
+	pop_2020: 77841267,
 	col: 4,
 	row: 8
 };
 var TG = {
 	name: "Telangana",
-	" pop_2020 ": 38510982,
+	pop_2020: 38510982,
 	col: 4,
 	row: 5
 };
 var TR = {
 	name: "Tripura",
-	" pop_2020 ": 4169794,
+	pop_2020: 4169794,
 	col: 8,
 	row: 4
 };
 var UP = {
 	name: "Uttar Pradesh",
-	" pop_2020 ": 237882725,
+	pop_2020: 237882725,
 	col: 5,
 	row: 3
 };
 var UT = {
 	name: "Uttarakhand",
-	" pop_2020 ": 11250858,
+	pop_2020: 11250858,
 	col: 4,
 	row: 3
 };
 var WB = {
 	name: "West Bengal",
-	" pop_2020 ": 99609303,
+	pop_2020: 99609303,
 	col: 7,
 	row: 4
 };
@@ -399,7 +399,7 @@ var MyChartModule = /*#__PURE__*/function () {
         } //Format our data to include 7day average.
 
 
-        meta[key].pop_2020;
+        var pop2020 = meta[key].pop_2020;
         var series = [];
         data.states[key].reported[props.cat].forEach(function (d, index) {
           var lastWeek = data.states[key].reported[props.cat].slice(index - 6, index + 1).filter(function (d) {
@@ -409,6 +409,7 @@ var MyChartModule = /*#__PURE__*/function () {
             val: d,
             avg7day: lastWeek.length == 7 ? d3.mean(lastWeek) : null
           };
+          obj.per100k = obj.avg7day == 0 ? 0 : obj.avg7day > 0 ? obj.avg7day / pop2020 * 100000 : null;
           series.push(obj);
         }); //Package each state as an object.
 
@@ -481,12 +482,14 @@ var MyChartModule = /*#__PURE__*/function () {
           containerWidth = _container$getBoundin.width; // Respect the width of your container!
 
 
-      var width = containerWidth - margin.left - margin.right;
+      var width = containerWidth - margin.left - margin.right; //DEFAULT TO A SIMPLE GRID IF CONTAINER IS LESS THAN 500 PIXELS WIDE.
+
       props.isMobile = width < 500;
 
       if (props.isMobile) {
         props.cols = 6;
-        props.rows = Object.keys(data.states).length / 6;
+        props.rows = Object.keys(data.states).length / 6; //SMALLER INNER MARGINS.
+
         props.innerMargin.top = 5;
         props.innerMargin.right = 5;
         props.innerMargin.bottom = 10;
@@ -495,14 +498,19 @@ var MyChartModule = /*#__PURE__*/function () {
 
       var wh = width / props.cols; //width and height of squares for our grid.
 
-      var height = wh * props.rows;
+      var height = wh * props.rows; //SET THE DOMAIN FOR THE SCALEBANDS THAT DETERMINE STATE PLACEMENT
+
       var xGridDom = d3.range(1, props.cols + 1);
-      var yGridDom = d3.range(1, props.rows + 1);
+      var yGridDom = d3.range(1, props.rows + 1); //Format the data (See function for documentation)
+
       var statesArray = this.getStatesArray(data, props);
       var xGridScale = d3.scaleBand().rangeRound([0, wh * props.cols]).padding(0.05).domain(xGridDom);
-      var yGridScale = d3.scaleBand().rangeRound([0, wh * props.rows]).padding(0.05).domain(yGridDom);
-      var xScale = d3.scaleLinear().range([0, wh - innerMargin.left - innerMargin.right]).domain([0, data.series.length - 1]);
-      var inverseX = d3.scaleLinear().domain([0, wh - innerMargin.left - innerMargin.right]);
+      var yGridScale = d3.scaleBand().rangeRound([0, wh * props.rows]).padding(0.05).domain(yGridDom); //Inner x scale for drawing lines along the date axis.
+
+      var xScale = d3.scaleLinear().range([0, wh - innerMargin.left - innerMargin.right]).domain([0, data.series.length - 1]); //inverse scale for getting tooltip dates.
+
+      var inverseX = d3.scaleLinear().domain([0, wh - innerMargin.left - innerMargin.right]); //works with inverse scale for getting tooltip dates.
+
       var scaleXTime = d3.scaleTime().domain([new Date(data.series[0]), new Date(data.series[data.series.length - 1])]).range([0, wh - innerMargin.left - innerMargin.right]);
       var plot = this.selection().appendSelect('svg') // 👈 Use appendSelect instead of append for non-data-bound elements!
       .attr('width', width + margin.left + margin.right).attr('height', height + margin.top + margin.bottom).appendSelect('g.plot').attr('transform', "translate(".concat(margin.left, ",").concat(margin.top, ")"));
@@ -529,6 +537,7 @@ var MyChartModule = /*#__PURE__*/function () {
 
       function makeLine(datum) {
         var yMax = props.scaleType == 'adjusted' ? datum.max : props.uniformMax;
+        console.log(yMax);
         datum.yScale = d3.scaleLinear().range([wh - innerMargin.top - innerMargin.bottom, 0]).domain([0, yMax]);
         var line = d3.line().defined(function (d) {
           return d[props.lineVar] !== null;
