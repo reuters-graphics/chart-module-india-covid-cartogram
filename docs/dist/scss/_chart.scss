@@ -14,6 +14,7 @@ $half-white: hsla(0, 0%, 100%, .75);
   .state-name {
     position: absolute;
     line-height: 1.1;
+    pointer-events: none;
 
     span.display {
       color: $half-white;

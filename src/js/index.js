@@ -266,7 +266,7 @@ class MyChartModule {
           d.series
         )}<span class='display'>${display}</span>`;
       })
-      .style('width', `${wh}px`)
+      .style('width', `${wh-10}px`)
       .style('left', (d) => {
         let xPos = xGridScale(d.col) + margin.left;
         return `${xPos}px`;
