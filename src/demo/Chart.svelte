@@ -2,24 +2,20 @@
 Follow the notes below! -->
 <script>
   export let responsive; // eslint-disable-line
-  import { afterUpdate } from 'svelte';
+  import { afterUpdate, onMount } from 'svelte';
   import Docs from './App/Docs.svelte';
   import Explorer from './App/Explorer.svelte';
   import MyChartModule from '../js/index';
   import sampleData from '../js/india-sample.json';
+  import * as d3 from 'd3';
 
   let chart = new MyChartModule();
   let chartContainer;
 
-  // 🎚️ Create variables for any data or props you want users to be able
-  // to update in the demo. (And write buttons to update them below!)
-  let chartData = getRandomData();
 
-  let circleFill = 'steelblue';
-  // ...
 
   // 🎈 Tie your custom props back together into one chartProps object.
-  $: chartProps = { fill: circleFill };
+  $: chartProps = {};
 
   afterUpdate(() => {
     // 💪 Create a new chart instance of your module.
@@ -32,19 +28,16 @@ Follow the notes below! -->
       .draw(); // 🚀 DRAW IT!
   });
 
-  // Creates array of random variables for 3 circles.
-  function getRandomData() {
-    const arr = [];
-    for (let i = 0; i < 3; i++) {
-      const d = {
-        x: Math.floor(Math.random() * Math.floor(100)), //Random int 0-100
-        y: Math.floor(Math.random() * Math.floor(100)), //Random int 0-100
-        r: Math.floor(Math.random() * Math.floor(30 - 10) + 10), //Random int 10-30
-      };
-      arr.push(d);
-    }
-    return arr;
-  }
+  onMount(() => {
+    clicked('cats', chart.defaultProps.cat);
+    clicked('scales', chart.defaultProps.scaleType);
+  })
+
+  const clicked = (grp, val) => {
+    d3.selectAll(`.btn-group.${grp} button`).classed('active', false);
+    d3.selectAll(`.btn-group.${grp} button.${val}`).classed('active', true);
+  };
+  
 </script>
 
 <!-- 🖌️ Style your demo page here -->
@@ -61,34 +54,50 @@ Follow the notes below! -->
 <div class="chart-options">
   <!-- ✏️ Create buttons that update your data/props variables when they're clicked! -->
   
-    <button on:click={() => {
-      chartProps.cat = 'cases'
-      console.log(chartProps);
-    }}
-    >Cases
-    </button>
-    <button on:click={() => {
-      chartProps.cat = 'deaths'
-      console.log(chartProps);
-    }}
-    >Deaths
-    </button>
-    <button on:click={() => {
-      chartProps.scaleType = 'adjusted';
-      console.log('adjusted');
-    }}
-    >Adjusted scale
-    </button>
-    <button on:click={() => {
-      chartProps.scaleType = 'uniform';
-      console.log('uniform');
-    }}
-    >Uniform scale
-    </button>
+    <div class="btn-group cats">
+      <button class='cases' on:click={() => {
+        chartProps.cat = 'cases'
+        clicked('cats', 'cases');
+      }}
+      >Cases
+      </button>
+      <button class= 'deaths' on:click={() => {
+        chartProps.cat = 'deaths'
+        clicked('cats', 'deaths');
+      }}
+      >Deaths
+      </button>
+    </div>
+
+    <div class="btn-group scales">
+      <button class='adjusted' on:click={() => {
+        chartProps.lineVar = 'avg7day';
+        chartProps.scaleType = 'adjusted';
+        clicked('scales', 'adjusted');
+      }}
+      >Adjusted scale
+      </button>
+      <button class='uniform' on:click={() => {
+        chartProps.lineVar = 'avg7day';
+        chartProps.scaleType = 'uniform';
+        clicked('scales', 'uniform');
+      }}
+      >Uniform scale
+      </button>
+      <button class='per100k' on:click={() => {
+        chartProps.lineVar = 'per100k';
+        chartProps.scaleType = 'uniform';
+        clicked('scales', 'per100k');
+      }}
+      >Per 100K
+      </button>
+    </div>
 
 
 
 </div>
+
+
 
 <!-- ⚙️ These components will automatically create interactive documentation for you chart! -->
 <Docs />

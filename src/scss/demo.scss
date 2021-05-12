@@ -40,20 +40,20 @@ div.chart-options {
   margin-top: 20px;
   text-align: center;
 
-  button {
-    @include font-sans;
-    background-color: transparent;
-    color: #666;
-    border: 1px solid #ccc;
-    margin: 3px 2px;
-    padding: 5px 15px;
-    border-radius: 2px;
-    &:active, &:focus, &:hover{
-      outline: none;
-      border: 1px solid #666;
-    }
+  // button {
+  //   @include font-sans;
+  //   background-color: transparent;
+  //   color: #666;
+  //   border: 1px solid #ccc;
+  //   margin: 3px 2px;
+  //   padding: 5px 15px;
+  //   border-radius: 2px;
+  //   &:active, &:focus, &:hover{
+  //     outline: none;
+  //     border: 1px solid #666;
+  //   }
     
-  }
+  // }
 }
 
 div.size-options{
@@ -64,31 +64,61 @@ div.size-options{
   text-align: center;
   font-size: 18px;
   color: #ccc;
-  button{
-    border-radius: 0;
-    border: 1px solid #ccc;
-    border-right: 0;
-    height: 18px;
-    width: 20px;
-    outline: none;
-    &.active {
-      background-color: #ccc;
-    }
-    &:first-of-type{
-      margin-left: 10px;
-      border-top-left-radius: 5px;
-      border-bottom-left-radius: 5px;
-    }
-    &:last-of-type{
-      margin-right: 10px;
-      border-top-right-radius: 5px;
-      border-bottom-right-radius: 5px;
-      border-right: 1px solid #ccc;
-    }
-  }
+  // button{
+  //   border-radius: 0;
+  //   border: 1px solid #ccc;
+  //   border-right: 0;
+  //   height: 18px;
+  //   width: 20px;
+  //   outline: none;
+  //   &.active {
+  //     background-color: #ccc;
+  //   }
+  //   &:first-of-type{
+  //     margin-left: 10px;
+  //     border-top-left-radius: 5px;
+  //     border-bottom-left-radius: 5px;
+  //   }
+  //   &:last-of-type{
+  //     margin-right: 10px;
+  //     border-top-right-radius: 5px;
+  //     border-bottom-right-radius: 5px;
+  //     border-right: 1px solid #ccc;
+  //   }
+  // }
 }
 
 
 
+
+.btn-group button {
+  background-color: white;
+  border: 1px solid $gray-500;
+  color: $gray-500;
+  padding: 10px 24px; /* Some padding */
+  cursor: pointer; /* Pointer/hand icon */
+  float: left; /* Float the buttons side by side */
+}
+
+.btn-group button:not(:last-child) {
+  border-right: none; /* Prevent double borders */
+}
+
+/* Clear floats (clearfix hack) */
+.btn-group:after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+/* Add a background color on hover */
+.btn-group button:hover {
+  background-color: $gray-100;
+}
+
+.btn-group button.active {
+  background-color: $gray-500;
+  color: white;
+}
 
 

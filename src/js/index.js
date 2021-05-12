@@ -1,6 +1,8 @@
 import * as d3 from 'd3';
 import * as utils from './utils.js';
-import { appendSelect } from 'd3-appendselect';
+import {
+  appendSelect
+} from 'd3-appendselect';
 import merge from 'lodash/merge';
 import meta from '../data/india_states_meta.json';
 import D3Locale from '@reuters-graphics/d3-locale';
@@ -58,6 +60,7 @@ class MyChartModule {
       let pop2020 = meta[key].pop_2020;
       let series = [];
       data.states[key].reported[props.cat].forEach((d, index) => {
+        
         let lastWeek = data.states[key].reported[props.cat]
           .slice(index - 6, index + 1)
           .filter((d) => d != null);
@@ -66,6 +69,8 @@ class MyChartModule {
           val: d,
           avg7day: lastWeek.length == 7 ? d3.mean(lastWeek) : null,
         };
+
+        obj.per100k = obj.avg7day == 0 ? 0 : obj.avg7day > 0 ? (obj.avg7day/pop2020) * 100000 : null;
 
         series.push(obj);
       });
@@ -77,7 +82,7 @@ class MyChartModule {
         key: key,
         name: data.states[key].name,
         max: d3.max(series, (d) => d[props.lineVar]),
-        series: series,
+        series: series
       };
 
       //If not mobile, pull the rows and column assignments from the metadata
@@ -164,31 +169,41 @@ class MyChartModule {
     const dateFormat = locale.formatTime('%b. %d');
     const numberFormat = locale.format(',');
 
-    const { margin, innerMargin } = props;
+    const {
+      margin,
+      innerMargin
+    } = props;
 
     const container = this.selection().node();
-    const { width: containerWidth } = container.getBoundingClientRect(); // Respect the width of your container!
+    const {
+      width: containerWidth
+    } = container.getBoundingClientRect(); // Respect the width of your container!
 
     const width = containerWidth - margin.left - margin.right;
 
+    //DEFAULT TO A SIMPLE GRID IF CONTAINER IS LESS THAN 500 PIXELS WIDE.
     props.isMobile = width < 500;
 
     if (props.isMobile) {
       props.cols = 6;
       props.rows = Object.keys(data.states).length / 6;
 
+      //SMALLER INNER MARGINS.
       props.innerMargin.top = 5;
       props.innerMargin.right = 5;
       props.innerMargin.bottom = 10;
       props.innerMargin.left = 5;
+
     }
 
     let wh = width / props.cols; //width and height of squares for our grid.
     const height = wh * props.rows;
 
+    //SET THE DOMAIN FOR THE SCALEBANDS THAT DETERMINE STATE PLACEMENT
     let xGridDom = d3.range(1, props.cols + 1);
     let yGridDom = d3.range(1, props.rows + 1);
 
+    //Format the data (See function for documentation)
     let statesArray = this.getStatesArray(data, props);
 
     const xGridScale = d3
@@ -203,15 +218,18 @@ class MyChartModule {
       .padding(0.05)
       .domain(yGridDom);
 
+    //Inner x scale for drawing lines along the date axis.
     const xScale = d3
       .scaleLinear()
       .range([0, wh - innerMargin.left - innerMargin.right])
       .domain([0, data.series.length - 1]);
 
+    //inverse scale for getting tooltip dates.
     const inverseX = d3
       .scaleLinear()
       .domain([0, wh - innerMargin.left - innerMargin.right]);
 
+    //works with inverse scale for getting tooltip dates.
     const scaleXTime = d3
       .scaleTime()
       .domain([
@@ -269,6 +287,8 @@ class MyChartModule {
     function makeLine(datum) {
       let yMax = props.scaleType == 'adjusted' ? datum.max : props.uniformMax;
 
+      console.log(yMax);
+
       datum.yScale = d3
         .scaleLinear()
         .range([wh - innerMargin.top - innerMargin.bottom, 0])
@@ -306,11 +326,11 @@ class MyChartModule {
         let index = Math.round(inverseX(mx));
 
         index =
-          index < 0
-            ? 0
-            : index >= data.series.length
-            ? data.series.length - 2
-            : index;
+          index < 0 ?
+          0 :
+          index >= data.series.length ?
+          data.series.length - 2 :
+          index;
 
         const datum = d.series[index];
         const datumY = datum[props.lineVar];
