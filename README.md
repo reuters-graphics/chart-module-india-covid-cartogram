@@ -1,6 +1,6 @@
 ![](./badge.svg)
 
-# MyChartModule
+# The India COVID cartogram module
 
 See the [demo page](https://reuters-graphics.github.io/chart-module-india-covid-cartogram/).
 
