@@ -560,7 +560,7 @@ var MyChartModule = /*#__PURE__*/function () {
         var display = meta[d.key]["short"].replace('-', '-<br/>');
         display = display.replace('Kashmir', '<br/>Kashmir');
         return "".concat(_this.getArrow(d.series), "<span class='display'>").concat(display, "</span>");
-      }).style('width', "".concat(wh, "px")).style('left', function (d) {
+      }).style('width', "".concat(wh - 10, "px")).style('left', function (d) {
         var xPos = xGridScale(d.col) + margin.left;
         return "".concat(xPos, "px");
       }).style('top', function (d) {
