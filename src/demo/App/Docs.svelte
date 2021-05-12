@@ -43,10 +43,10 @@ for your chart. In which case, follow the notes below! -->
    */
 
   // Installation docs
-  const installDocs = `$ yarn add https://github.com/reuters-graphics/chart-module-my-chart-module.git`;
+  const installDocs = `$ yarn add https://github.com/reuters-graphics/chart-module-india-covid-cartogram.git`;
 
   // JavaScript docs
-  $: jsDocs = `import Chart from '@reuters-graphics/chart-module-my-chart-module';
+  $: jsDocs = `import Chart from '@reuters-graphics/chart-module-india-covid-cartogram';
 
 const chart = new Chart();
 
@@ -59,7 +59,7 @@ chart
   // SCSS docs
   const styleDocs = `$MyChartModule-container: '.my-chart-module-container';
 
-@import '~@reuters-graphics/chart-module-my-chart-module/src/scss/chart';`;
+@import '~@reuters-graphics/chart-module-india-covid-cartogram/src/scss/chart';`;
 
 </script>
 
@@ -78,7 +78,7 @@ chart
 
 <!-- 🔗 A link to your chart's GitHub repo -->
 <div class='repo-link'>
-  <a href="https://github.com/reuters-graphics/chart-module-my-chart-module" target="_blank">
+  <a href="https://github.com/reuters-graphics/chart-module-india-covid-cartogram" target="_blank">
     <Icon icon={faGithub} />
   </a>
 </div>
