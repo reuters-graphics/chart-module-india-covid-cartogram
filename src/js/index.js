@@ -125,7 +125,7 @@ class MyChartModule {
   }
 
   defaultProps = {
-    cols: 9,
+    cols: 8,
     rows: 8,
     cat: 'cases',
     lineVar: 'avg7day',
@@ -139,7 +139,7 @@ class MyChartModule {
       left: 10,
     },
     innerMargin: {
-      top: 10,
+      top: 24,
       right: 10,
       bottom: 20,
       left: 10,
@@ -182,14 +182,14 @@ class MyChartModule {
     props.isMobile = width < 500;
 
     if (props.isMobile) {
-      props.cols = 6;
-      props.rows = Object.keys(data.states).length / 6;
+      props.cols = 4;
+      props.rows = Object.keys(data.states).length / props.cols;
 
       //SMALLER INNER MARGINS.
-      props.innerMargin.top = 5;
-      props.innerMargin.right = 5;
-      props.innerMargin.bottom = 10;
-      props.innerMargin.left = 5;
+      //props.innerMargin.top = 5;
+      // props.innerMargin.right = 5;
+      // props.innerMargin.bottom = 10;
+      //props.innerMargin.left = 5;
     }
 
     let wh = width / props.cols; //width and height of squares for our grid.
@@ -258,8 +258,14 @@ class MyChartModule {
       .join('div')
       .attr('class', 'state-name')
       .html((d) => {
-        return `${this.getArrow(d.series)} <p>${d.key}</p>`;
+
+        let display = meta[d.key].short.replace('-','-<br/>');
+        
+        display = display.replace('Kashmir', '<br/>Kashmir');
+
+        return `${this.getArrow(d.series)}<span class='display'>${display}</span>`;
       })
+      .style('width', `${wh}px`)
       .style('left', (d) => {
         let xPos = xGridScale(d.col) + margin.left;
         return `${xPos}px`;
