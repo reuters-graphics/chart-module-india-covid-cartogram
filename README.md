@@ -1,75 +1,55 @@
 ![](./badge.svg)
 
-# bluprint_chart-module-svelte
+# MyChartModule
 
-This [bluprint](https://github.com/reuters-graphics/bluprint) contains a framework for writing installable, reusable chart modules.
+See the [demo page](https://reuters-graphics.github.io/chart-module-india-covid-cartogram/).
 
-The template also contains a [Svelte](https://svelte.dev/) app that hosts a built-in interactive demo of your chart. But don't be fooled, chart modules are Just JS™. No prior Svelte knowledge required.
+### Install
 
-## When to use this
+```
+$ yarn add https://github.com/reuters-graphics/chart-module-india-covid-cartogram.git
+```
 
-This bluprint may be for you if you're...
+### Use
 
-**... building a chart for re-use.**
-  
-- If you have a chart you or others are likely to use again and again, this template includes a strong pattern for reusability. It's built to publish an npm-installable version of your chart users can easily pull into any project. It also comes with strong conventions for handling customizing your chart, automatically documents how to use your chart and is battle-tested with modern JS frameworks.
+```javascript
+import MyChartModule from '@reuters-graphics/chart-module-india-covid-cartogram';
 
-**... working on a chart apart from the project it will be used in.** 
+const chart = new MyChartModule();
 
-- If you're working with others or want to develop your chart in parallel to a larger project, this bluprint is a great way to sandbox your dataviz work. Once your chart is ready, you'll install it into your project, and as your chart develops, your colleagues can simply upgrade it through npm to get your latest code. For large projects, this is an especially good way to isolate your work and split a project between developers working with different technologies.
+let myProps = {
+  cat: 'cases', // `cases` or `deaths`
+  lineVar: 'avg7day', //`avg7day` or `per100k`*
+  scaleType: 'adjusted' //`adjusted`, `uniform`
+}
 
-**... prototyping a chart.**
+//* Note: if `lineVar` is set to `per100k`,  `scaleType` should also be set to `uniform`.
 
-- This bluprint is a batteries-included development environment for charts. It's like a notebook, except at the end you can publish your chart as a simple JS library and install it anywhere else you need it. The built-in demo page is a nice place to play!
+// To create your chart, pass a selector string to the chart's selection method,
+// as well as any props or data to their respective methods. Then call draw.
+chart
+  .selection('#chart')
+  .data([1, 2, 3])
+  .props({ stroke: 'orange' })
+  .draw();
 
-## When _not_ to use this
+// You can call any method again to update the chart.
+chart
+  .data([3, 4, 5])
+  .draw();
 
-If you're on deadline and just trying to hammer out some viz code, publishing your chart separately then installing and wiring it up in another project from node_modules may be an extra step you don't want.
+// Or just call the draw function alone, which is useful for resizing the chart.
+chart.draw();
+```
 
-In that case, though, you can still use the great D3 boilerplate included in this package. Watch for some editor snippets you can use coming soon or just copy/paste the chart class in `src/js/index.js` into your project as a starting place.
+To apply this chart's default styles when using SCSS, simply define the variable `$MyChartModule-container` to represent the ID or class of the chart's container(s) and import the `_chart.scss` partial.
 
-## Quickstart
+```CSS
+$MyChartModule-container: '#chart';
 
-1. If you haven't already, add this bluprint to your CLI.
-
-  ```
-  $ bluprint add https://github.com/reuters-graphics/bluprint_chart-module-svelte
-  ```
-
-2. Make a new directory and use the bluprint.
-
-  ```
-  $ mkdir my-project && cd my-project
-  $ bluprint start
-  ```
-3. Once your bluprint is finished, be sure to create a repository in GitHub according to the slug you provided for your chart and add it to your repo.
-
-  ```
-  $ git remote add origin https://github.com/reuters.graphics/chart-module-my-dataviz.git
-  ```
-
-
-4. Start the development server to begin working on your chart module.
-
-  ```
-  $ runner start
-  ```
-
-5. When you're finished, build out your chart module as a library.
-
-  ```
-  $ runner build
-  ```
-
-6. The build process will bundle your chart module for others to install from GitHub. It will also create a GitHub docs page to preview your chart, which you can publish by updating the GitHub Pages settings on your repo in GitHub (use the `docs/` folder on the `master` branch). Don't forget to push to GitHub!
-
+@import '~@reuters-graphics/chart-module-india-covid-cartogram/src/scss/chart';
+```
 
 ## Developing chart modules
 
 Read more in the [DEVELOPING docs](./DEVELOPING.md) about how to write your chart module.
-
-
-## Notes:
-
-India state population is from here:
-https://uidai.gov.in/images/state-wise-aadhaar-saturation.pdf
