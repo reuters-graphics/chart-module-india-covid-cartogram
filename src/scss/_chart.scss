@@ -2,12 +2,11 @@
 @import '~@reuters-graphics/style-color/scss/thematic/brand';
 @import '~@reuters-graphics/style-color/scss/all';
 
-$MyChartModule-container: '#my-chart-module-container' !default;
+$IndiaCartogram-container: '#my-chart-module-container' !default;
 
-$half-white: hsla(0, 0%, 100%, .75);
+$half-white: hsla(0, 0%, 100%, 0.75);
 
-#{$MyChartModule-container} {
-
+#{$IndiaCartogram-container} {
   background: #2f353f;
   position: relative;
 
@@ -18,11 +17,11 @@ $half-white: hsla(0, 0%, 100%, .75);
 
     span.display {
       color: $half-white;
-      font-size: .8rem;
+      font-size: 0.8rem;
       font-weight: 200;
       font-stretch: ultra-condensed;
       position: relative;
-      left: .625rem;
+      left: 0.625rem;
       display: inline-block;
     }
 
@@ -35,9 +34,9 @@ $half-white: hsla(0, 0%, 100%, .75);
     }
 
     svg {
-      width: .625em;
+      width: 0.625em;
       position: absolute;
-      left: -.1rem;
+      left: -0.1rem;
     }
 
     .fa-caret-down {
@@ -48,7 +47,6 @@ $half-white: hsla(0, 0%, 100%, .75);
       color: #ee665b;
     }
   }
-
 
   /* Write your chart styles here */
   .axis {
@@ -72,7 +70,6 @@ $half-white: hsla(0, 0%, 100%, .75);
   }
 
   g.state-g {
-
     path {
       fill: none;
     }
@@ -92,5 +89,4 @@ $half-white: hsla(0, 0%, 100%, .75);
       font-size: 11px;
     }
   }
-
 }

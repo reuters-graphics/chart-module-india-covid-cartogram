@@ -1,12 +1,11 @@
 @use "chart";
-@import "~@reuters-graphics/style-theme-eisbaer/scss/main";
-@import "~@reuters-graphics/style-color/scss/thematic/brand";
-
+@import '~@reuters-graphics/style-theme-eisbaer/scss/main';
+@import '~@reuters-graphics/style-color/scss/thematic/brand';
 
 // Some styles for the demo page...
 
 #my-chart-module-container {
-  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
 }
 
 h5 {
@@ -15,13 +14,13 @@ h5 {
   text-transform: uppercase;
 }
 
-nav.nav{
+nav.nav {
   padding: 20px 0;
   text-align: center;
-  svg{
+  svg {
     margin: 0 auto;
     fill: $brand-secondary;
-    .st4{
+    .st4 {
       fill: $brand;
     }
   }
@@ -52,11 +51,11 @@ div.chart-options {
   //     outline: none;
   //     border: 1px solid #666;
   //   }
-    
+
   // }
 }
 
-div.size-options{
+div.size-options {
   position: fixed;
   bottom: 0;
   width: 100vw;
@@ -88,9 +87,6 @@ div.size-options{
   // }
 }
 
-
-
-
 .btn-group button {
   background-color: white;
   border: 1px solid $gray-500;
@@ -106,7 +102,7 @@ div.size-options{
 
 /* Clear floats (clearfix hack) */
 .btn-group:after {
-  content: "";
+  content: '';
   clear: both;
   display: table;
 }
@@ -120,5 +116,3 @@ div.size-options{
   background-color: $gray-500;
   color: white;
 }
-
-
