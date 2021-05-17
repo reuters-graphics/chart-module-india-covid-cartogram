@@ -26,7 +26,6 @@
     "@reuters-graphics/d3-locale": "^0.1.0",
     "d3-appendselect": "^0.1.0",
     "d3-array": "2.12.1",
-    "d3-format": "^1.4.4",
     "d3-axis": "2.0.0",
     "d3-scale": "3.2.3",
     "d3-shape": "2.1.0",
@@ -36,6 +35,7 @@
     "lodash": "4.17.20"
   },
   "peerDependencies": {
+    "d3-format": "^1.4.4",
     "d3-selection": "2.0.0"
   },
   "devDependencies": {
