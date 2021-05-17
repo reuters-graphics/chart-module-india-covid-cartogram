@@ -2,7 +2,6 @@
   "name": "@reuters-graphics/chart-module-india-covid-cartogram",
   "version": "0.0.3",
   "main": "dist/index.js",
-  "module": "src/js/index.js",
   "license": "MIT",
   "private": false,
   "repository": "github:reuters-graphics/chart-module-india-covid-cartogram",
