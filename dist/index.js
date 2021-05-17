@@ -7,6 +7,27 @@ var merge = require('lodash/merge');
 
 function _interopDefaultLegacy (e) { return e && typeof e === 'object' && 'default' in e ? e : { 'default': e }; }
 
+function _interopNamespace(e) {
+  if (e && e.__esModule) return e;
+  var n = Object.create(null);
+  if (e) {
+    Object.keys(e).forEach(function (k) {
+      if (k !== 'default') {
+        var d = Object.getOwnPropertyDescriptor(e, k);
+        Object.defineProperty(n, k, d.get ? d : {
+          enumerable: true,
+          get: function () {
+            return e[k];
+          }
+        });
+      }
+    });
+  }
+  n['default'] = e;
+  return Object.freeze(n);
+}
+
+var d3__namespace = /*#__PURE__*/_interopNamespace(d3);
 var D3Locale__default = /*#__PURE__*/_interopDefaultLegacy(D3Locale);
 var merge__default = /*#__PURE__*/_interopDefaultLegacy(merge);
 
@@ -343,7 +364,7 @@ function round(value, decimals) {
   return Number(Math.round(value + 'e' + decimals) + 'e-' + decimals);
 }
 
-d3.selection.prototype.appendSelect = d3Appendselect.appendSelect;
+d3__namespace.selection.prototype.appendSelect = d3Appendselect.appendSelect;
 /**
  * Write your chart as a class with a single draw method that draws
  * your chart! This component inherits from a base class you can
@@ -391,7 +412,7 @@ var MyChartModule = /*#__PURE__*/function () {
     key: "selection",
     value: function selection(selector) {
       if (!selector) return this._selection;
-      this._selection = d3.select(selector);
+      this._selection = d3__namespace.select(selector);
       return this;
     }
   }, {
@@ -440,7 +461,7 @@ var MyChartModule = /*#__PURE__*/function () {
           });
           var obj = {
             val: d,
-            avg7day: lastWeek.length === 7 ? d3.mean(lastWeek) : null
+            avg7day: lastWeek.length === 7 ? d3__namespace.mean(lastWeek) : null
           };
           obj.per100k = obj.avg7day === 0 ? 0 : obj.avg7day > 0 ? obj.avg7day / pop2020 * 100000 : null;
           series.push(obj);
@@ -451,7 +472,7 @@ var MyChartModule = /*#__PURE__*/function () {
           col: colIndex,
           key: key,
           name: data.states[key].name,
-          max: d3.max(series, function (d) {
+          max: d3__namespace.max(series, function (d) {
             return d[props.lineVar];
           }),
           series: series
@@ -466,7 +487,7 @@ var MyChartModule = /*#__PURE__*/function () {
         colIndex++; // Tick up column index
       }); // Get the max value of all max values for the uniform scale version.
 
-      props.uniformMax = d3.max(statesArray, function (d) {
+      props.uniformMax = d3__namespace.max(statesArray, function (d) {
         return d.max;
       }); // Return our formatted data as an array.
 
@@ -492,12 +513,12 @@ var MyChartModule = /*#__PURE__*/function () {
     }
   }, {
     key: "draw",
-
+    value:
     /**
      * Write all your code to draw your chart in this function!
      * Remember to use appendSelect!
      */
-    value: function draw() {
+    function draw() {
       var _this = this;
 
       var data = this.data(); // Data passed to your chart
@@ -532,18 +553,18 @@ var MyChartModule = /*#__PURE__*/function () {
 
       var height = wh * props.rows; // SET THE DOMAIN FOR THE SCALEBANDS THAT DETERMINE STATE PLACEMENT
 
-      var xGridDom = d3.range(1, props.cols + 1);
-      var yGridDom = d3.range(1, props.rows + 1); // Format the data (See function for documentation)
+      var xGridDom = d3__namespace.range(1, props.cols + 1);
+      var yGridDom = d3__namespace.range(1, props.rows + 1); // Format the data (See function for documentation)
 
       var statesArray = this.getStatesArray(data, props);
-      var xGridScale = d3.scaleBand().rangeRound([0, wh * props.cols]).padding(0.05).domain(xGridDom);
-      var yGridScale = d3.scaleBand().rangeRound([0, wh * props.rows]).padding(0.05).domain(yGridDom); // Inner x scale for drawing lines along the date axis.
+      var xGridScale = d3__namespace.scaleBand().rangeRound([0, wh * props.cols]).padding(0.05).domain(xGridDom);
+      var yGridScale = d3__namespace.scaleBand().rangeRound([0, wh * props.rows]).padding(0.05).domain(yGridDom); // Inner x scale for drawing lines along the date axis.
 
-      var xScale = d3.scaleLinear().range([0, wh - innerMargin.left - innerMargin.right]).domain([0, data.series.length - 1]); // inverse scale for getting tooltip dates.
+      var xScale = d3__namespace.scaleLinear().range([0, wh - innerMargin.left - innerMargin.right]).domain([0, data.series.length - 1]); // inverse scale for getting tooltip dates.
 
-      var inverseX = d3.scaleLinear().domain([0, wh - innerMargin.left - innerMargin.right]); // works with inverse scale for getting tooltip dates.
+      var inverseX = d3__namespace.scaleLinear().domain([0, wh - innerMargin.left - innerMargin.right]); // works with inverse scale for getting tooltip dates.
 
-      var scaleXTime = d3.scaleTime().domain([new Date(data.series[0]), new Date(data.series[data.series.length - 1])]).range([0, wh - innerMargin.left - innerMargin.right]);
+      var scaleXTime = d3__namespace.scaleTime().domain([new Date(data.series[0]), new Date(data.series[data.series.length - 1])]).range([0, wh - innerMargin.left - innerMargin.right]);
       var plot = this.selection().appendSelect('svg') // 👈 Use appendSelect instead of append for non-data-bound elements!
       .attr('width', width + margin.left + margin.right).attr('height', height + margin.top + margin.bottom).appendSelect('g.plot').attr('transform', "translate(".concat(margin.left, ",").concat(margin.top, ")"));
       var stateGroup = plot.selectAll('.state-g').data(statesArray).join('g').attr('class', 'state-g').attr('transform', function (d) {
@@ -572,8 +593,8 @@ var MyChartModule = /*#__PURE__*/function () {
       function makeLine(datum) {
         var yMax = props.scaleType === 'adjusted' ? datum.max : props.uniformMax;
         console.log(yMax);
-        datum.yScale = d3.scaleLinear().range([wh - innerMargin.top - innerMargin.bottom, 0]).domain([0, yMax]);
-        var line = d3.line().defined(function (d) {
+        datum.yScale = d3__namespace.scaleLinear().range([wh - innerMargin.top - innerMargin.bottom, 0]).domain([0, yMax]);
+        var line = d3__namespace.line().defined(function (d) {
           return d[props.lineVar] !== null;
         }).x(function (d, i) {
           return xScale(i);
@@ -599,7 +620,7 @@ var MyChartModule = /*#__PURE__*/function () {
         var date = new Date(data.series[index]);
 
         if (datum[props.lineVar] == null) {
-          d3.selectAll('.tooltip').remove();
+          d3__namespace.selectAll('.tooltip').remove();
           return true;
         } // Hacky way to ensure date stays in US timezones
 
@@ -607,12 +628,12 @@ var MyChartModule = /*#__PURE__*/function () {
         date.setHours(date.getHours() + 6);
         var x = scaleXTime(date);
         var y = d.yScale(datumY);
-        d3.select(parent).appendSelect('circle.tooltip').attr('r', 3).attr('cx', x + innerMargin.left).attr('cy', y + innerMargin.top).style('fill', 'white').style('stroke', 'white').style('stroke-width', 1);
-        d3.select(parent).appendSelect('text.tooltip.datum').attr('x', x).attr('y', y < d.yScale.range()[1] / 2 ? y + 20 : y - 7).style('text-align', 'center').style('text-anchor', x > wh / 2 ? 'end' : 'start').text(numberFormat(round(datum[props.lineVar], 0)));
-        d3.select(parent).appendSelect('text.tooltip.date').attr('x', x).attr('y', d.yScale.range()[0] + 5 + innerMargin.bottom).text(dateFormat(date)).style('text-anchor', x > wh / 2 ? 'end' : 'start');
+        d3__namespace.select(parent).appendSelect('circle.tooltip').attr('r', 3).attr('cx', x + innerMargin.left).attr('cy', y + innerMargin.top).style('fill', 'white').style('stroke', 'white').style('stroke-width', 1);
+        d3__namespace.select(parent).appendSelect('text.tooltip.datum').attr('x', x).attr('y', y < d.yScale.range()[1] / 2 ? y + 20 : y - 7).style('text-align', 'center').style('text-anchor', x > wh / 2 ? 'end' : 'start').text(numberFormat(round(datum[props.lineVar], 0)));
+        d3__namespace.select(parent).appendSelect('text.tooltip.date').attr('x', x).attr('y', d.yScale.range()[0] + 5 + innerMargin.bottom).text(dateFormat(date)).style('text-anchor', x > wh / 2 ? 'end' : 'start');
       });
       touchBox.on('mouseout touchleave touchcancel', function (d, i, nodes) {
-        d3.selectAll('.tooltip').remove();
+        d3__namespace.selectAll('.tooltip').remove();
       });
       return this; // Generally, always return the chart class from draw!
     }
