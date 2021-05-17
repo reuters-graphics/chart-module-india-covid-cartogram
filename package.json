@@ -1,12 +1,12 @@
 {
-  "name": "@reuters-graphics/chart-module-my-chart-module",
+  "name": "@reuters-graphics/chart-module-india-covid-cartogram",
   "version": "0.0.1",
   "main": "dist/index.js",
   "module": "src/js/index.js",
   "license": "MIT",
   "private": false,
-  "repository": "github:reuters-graphics/chart-module-my-chart-module",
-  "homepage": "https://reuters-graphics.github.io/chart-module-my-chart-module/",
+  "repository": "github:reuters-graphics/chart-module-india-covid-cartogram",
+  "homepage": "https://reuters-graphics.github.io/chart-module-india-covid-cartogram/",
   "files": [
     "src/js/**/*",
     "src/scss/**/*",
