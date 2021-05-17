@@ -7,7 +7,7 @@ Follow the notes below! -->
   import Explorer from './App/Explorer.svelte';
   import MyChartModule from '../js/index';
   import sampleData from '../js/india-sample.json';
-  import * as d3 from 'd3';
+  // import * as d3 from 'd3';
 
   let chart = new MyChartModule();
   let chartContainer;
@@ -27,14 +27,14 @@ Follow the notes below! -->
   });
 
   onMount(() => {
-    clicked('cats', chart.defaultProps.cat);
-    clicked('scales', chart.defaultProps.scaleType);
+    // clicked('cats', chart.defaultProps.cat);
+    // clicked('scales', chart.defaultProps.scaleType);
   });
 
-  const clicked = (grp, val) => {
-    d3.selectAll(`.btn-group.${grp} button`).classed('active', false);
-    d3.selectAll(`.btn-group.${grp} button.${val}`).classed('active', true);
-  };
+  // const clicked = (grp, val) => {
+  //   d3.selectAll(`.btn-group.${grp} button`).classed('active', false);
+  //   d3.selectAll(`.btn-group.${grp} button.${val}`).classed('active', true);
+  // };
 </script>
 
 <div id="my-chart-module-container" bind:this={chartContainer} />
@@ -47,7 +47,7 @@ Follow the notes below! -->
       class="cases"
       on:click={() => {
         chartProps.cat = 'cases';
-        clicked('cats', 'cases');
+        // clicked('cats', 'cases');
       }}
       >Cases
     </button>
@@ -55,7 +55,7 @@ Follow the notes below! -->
       class="deaths"
       on:click={() => {
         chartProps.cat = 'deaths';
-        clicked('cats', 'deaths');
+        // clicked('cats', 'deaths');
       }}
       >Deaths
     </button>
@@ -67,7 +67,7 @@ Follow the notes below! -->
       on:click={() => {
         chartProps.lineVar = 'avg7day';
         chartProps.scaleType = 'adjusted';
-        clicked('scales', 'adjusted');
+        // clicked('scales', 'adjusted');
       }}
       >Adjusted scale
     </button>
@@ -76,7 +76,7 @@ Follow the notes below! -->
       on:click={() => {
         chartProps.lineVar = 'avg7day';
         chartProps.scaleType = 'uniform';
-        clicked('scales', 'uniform');
+        // clicked('scales', 'uniform');
       }}
       >Uniform scale
     </button>
@@ -85,7 +85,7 @@ Follow the notes below! -->
       on:click={() => {
         chartProps.lineVar = 'per100k';
         chartProps.scaleType = 'uniform';
-        clicked('scales', 'per100k');
+        // clicked('scales', 'per100k');
       }}
       >Per 100K
     </button>
