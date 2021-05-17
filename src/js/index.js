@@ -1,12 +1,10 @@
-import 'd3-transition';
-
 import * as d3 from 'd3';
-import * as utils from './utils.js';
 
 import D3Locale from '@reuters-graphics/d3-locale';
 import { appendSelect } from 'd3-appendselect';
 import merge from 'lodash/merge';
 import meta from '../data/india_states_meta.json';
+import { round } from './utils.js';
 
 d3.selection.prototype.appendSelect = appendSelect;
 
@@ -71,11 +69,11 @@ class MyChartModule {
         };
 
         obj.per100k =
-          obj.avg7day === 0
-            ? 0
-            : obj.avg7day > 0
-            ? (obj.avg7day / pop2020) * 100000
-            : null;
+          obj.avg7day === 0 ?
+              0 :
+            obj.avg7day > 0 ?
+                (obj.avg7day / pop2020) * 100000 :
+              null;
 
         series.push(obj);
       });
@@ -287,7 +285,6 @@ class MyChartModule {
       .appendSelect('path.line')
       .style('stroke', props.stroke)
       .style('stroke-width', props.strokeWidth)
-      .transition()
       .attr('d', (d) => makeLine(d));
 
     function makeLine(datum) {
@@ -333,11 +330,11 @@ class MyChartModule {
         let index = Math.round(inverseX(mx));
 
         index =
-          index < 0
-            ? 0
-            : index >= data.series.length
-            ? data.series.length - 2
-            : index;
+          index < 0 ?
+              0 :
+            index >= data.series.length ?
+                data.series.length - 2 :
+              index;
 
         const datum = d.series[index];
         const datumY = datum[props.lineVar];
@@ -368,7 +365,7 @@ class MyChartModule {
           .attr('y', y < d.yScale.range()[1] / 2 ? y + 20 : y - 7)
           .style('text-align', 'center')
           .style('text-anchor', x > wh / 2 ? 'end' : 'start')
-          .text(numberFormat(utils.round(datum[props.lineVar], 0)));
+          .text(numberFormat(round(datum[props.lineVar], 0)));
 
         d3.select(parent)
           .appendSelect('text.tooltip.date')
