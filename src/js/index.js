@@ -1,7 +1,13 @@
-import * as d3 from 'd3';
+import 'd3-transition';
+
+import * as d3 from 'd3-selection';
+
+import { max, mean, range } from 'd3-array';
+import { scaleBand, scaleLinear, scaleTime } from 'd3-scale';
 
 import D3Locale from '@reuters-graphics/d3-locale';
 import { appendSelect } from 'd3-appendselect';
+import { line as d3Line } from 'd3-shape';
 import merge from 'lodash/merge';
 import meta from '../data/india_states_meta.json';
 import { round } from './utils.js';
@@ -65,15 +71,15 @@ class MyChartModule {
 
         const obj = {
           val: d,
-          avg7day: lastWeek.length === 7 ? d3.mean(lastWeek) : null,
+          avg7day: lastWeek.length === 7 ? mean(lastWeek) : null,
         };
 
         obj.per100k =
-          obj.avg7day === 0
-            ? 0
-            : obj.avg7day > 0
-            ? (obj.avg7day / pop2020) * 100000
-            : null;
+          obj.avg7day === 0 ?
+              0 :
+            obj.avg7day > 0 ?
+                (obj.avg7day / pop2020) * 100000 :
+              null;
 
         series.push(obj);
       });
@@ -84,7 +90,7 @@ class MyChartModule {
         col: colIndex,
         key: key,
         name: data.states[key].name,
-        max: d3.max(series, (d) => d[props.lineVar]),
+        max: max(series, (d) => d[props.lineVar]),
         series: series,
       };
 
@@ -99,7 +105,7 @@ class MyChartModule {
     });
 
     // Get the max value of all max values for the uniform scale version.
-    props.uniformMax = d3.max(statesArray, (d) => d.max);
+    props.uniformMax = max(statesArray, (d) => d.max);
 
     // Return our formatted data as an array.
     return statesArray;
@@ -197,38 +203,33 @@ class MyChartModule {
     const height = wh * props.rows;
 
     // SET THE DOMAIN FOR THE SCALEBANDS THAT DETERMINE STATE PLACEMENT
-    const xGridDom = d3.range(1, props.cols + 1);
-    const yGridDom = d3.range(1, props.rows + 1);
+    const xGridDom = range(1, props.cols + 1);
+    const yGridDom = range(1, props.rows + 1);
 
     // Format the data (See function for documentation)
     const statesArray = this.getStatesArray(data, props);
 
-    const xGridScale = d3
-      .scaleBand()
+    const xGridScale = scaleBand()
       .rangeRound([0, wh * props.cols])
       .padding(0.05)
       .domain(xGridDom);
 
-    const yGridScale = d3
-      .scaleBand()
+    const yGridScale = scaleBand()
       .rangeRound([0, wh * props.rows])
       .padding(0.05)
       .domain(yGridDom);
 
     // Inner x scale for drawing lines along the date axis.
-    const xScale = d3
-      .scaleLinear()
+    const xScale = scaleLinear()
       .range([0, wh - innerMargin.left - innerMargin.right])
       .domain([0, data.series.length - 1]);
 
     // inverse scale for getting tooltip dates.
-    const inverseX = d3
-      .scaleLinear()
+    const inverseX = scaleLinear()
       .domain([0, wh - innerMargin.left - innerMargin.right]);
 
     // works with inverse scale for getting tooltip dates.
-    const scaleXTime = d3
-      .scaleTime()
+    const scaleXTime = scaleTime()
       .domain([
         new Date(data.series[0]),
         new Date(data.series[data.series.length - 1]),
@@ -293,13 +294,11 @@ class MyChartModule {
 
       console.log(yMax);
 
-      datum.yScale = d3
-        .scaleLinear()
+      datum.yScale = scaleLinear()
         .range([wh - innerMargin.top - innerMargin.bottom, 0])
         .domain([0, yMax]);
 
-      const line = d3
-        .line()
+      const line = d3Line()
         .defined((d) => d[props.lineVar] !== null)
         .x((d, i) => xScale(i))
         .y((d, i) => {
@@ -330,11 +329,11 @@ class MyChartModule {
         let index = Math.round(inverseX(mx));
 
         index =
-          index < 0
-            ? 0
-            : index >= data.series.length
-            ? data.series.length - 2
-            : index;
+          index < 0 ?
+              0 :
+            index >= data.series.length ?
+                data.series.length - 2 :
+              index;
 
         const datum = d.series[index];
         const datumY = datum[props.lineVar];

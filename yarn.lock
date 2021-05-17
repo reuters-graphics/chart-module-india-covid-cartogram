@@ -988,10 +988,10 @@
     node-gyp "^7.1.0"
     read-package-json-fast "^2.0.1"
 
-"@reuters-graphics/d3-locale@^0.2.1":
-  version "0.2.1"
-  resolved "https://registry.yarnpkg.com/@reuters-graphics/d3-locale/-/d3-locale-0.2.1.tgz#5d64fe1a899c370e5fd86b8d2cf64bc10a6744e2"
-  integrity sha512-vY0032gyZ2XDtHiiVqhl6mzi6s/qk5fCGGVEtlM53TyuHydce7L2zR+5uXCsN9ynA96kTmj7TcHb0/EES8XFOg==
+"@reuters-graphics/d3-locale@~0.1.0":
+  version "0.1.1"
+  resolved "https://registry.yarnpkg.com/@reuters-graphics/d3-locale/-/d3-locale-0.1.1.tgz#28438180c0fa368150085adcaf2be48c06415a98"
+  integrity sha512-H8/GFJcTRRwydeoRO947yz8w8uxl0D84mPqoa9ezBkCxJmDoZRAKwUMH+PdChcdeKxB5qIsm0I7pWzlDm/MDOQ==
 
 "@reuters-graphics/eslint-config@^0.0.2":
   version "0.0.2"
@@ -1850,12 +1850,24 @@ d3-shape@2:
   dependencies:
     d3-path "1 - 2"
 
-"d3-time-format@2 - 3", d3-time-format@3, d3-time-format@^3.0.0:
+"d3-time-format@2 - 3", d3-time-format@3:
   version "3.0.0"
   resolved "https://registry.yarnpkg.com/d3-time-format/-/d3-time-format-3.0.0.tgz#df8056c83659e01f20ac5da5fdeae7c08d5f1bb6"
   integrity sha512-UXJh6EKsHBTjopVqZBhFysQcoXSv/5yLONZvkQ5Kk3qbwiUYkdX17Xa1PT6U1ZWXGGfB1ey5L8dKMlFq2DO0Ag==
   dependencies:
     d3-time "1 - 2"
+
+d3-time-format@~2.0.0:
+  version "2.0.5"
+  resolved "https://registry.yarnpkg.com/d3-time-format/-/d3-time-format-2.0.5.tgz#9d7780204f7c9119c9170b1a56db4de9a8af972e"
+  integrity sha1-nXeAIE98kRnJFwsaVttN6aivly4=
+  dependencies:
+    d3-time "1"
+
+d3-time@1:
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/d3-time/-/d3-time-1.1.0.tgz#b1e19d307dae9c900b7e5b25ffc5dcc249a8a0f1"
+  integrity sha512-Xh0isrZ5rPYYdqhAVk8VLnMEidhz5aP7htAADH6MfzgmmicPkTo8LhkLxci61/lCB7n7UmE3bN0leRt+qvkLxA==
 
 "d3-time@1 - 2", d3-time@2, d3-time@^2.1.1:
   version "2.1.1"
