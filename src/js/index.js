@@ -1,9 +1,10 @@
 import * as d3 from 'd3';
 import * as utils from './utils.js';
+
+import D3Locale from '@reuters-graphics/d3-locale';
 import { appendSelect } from 'd3-appendselect';
 import merge from 'lodash/merge';
 import meta from '../data/india_states_meta.json';
-import D3Locale from '@reuters-graphics/d3-locale';
 
 d3.selection.prototype.appendSelect = appendSelect;
 
@@ -39,46 +40,46 @@ class MyChartModule {
         4) CREATE SERIES FOR EACH STATE BASED ON VALUE OF `props.cat` ('deaths' OR 'cases')
     */
 
-    //Create empty array to return at the end of this function.
-    let statesArray = [];
+    // Create empty array to return at the end of this function.
+    const statesArray = [];
 
-    //Default to a 6 column grid (not a cartogram)
-    //Use rowIndex and colIndex to keep track of rows and columns.
+    // Default to a 6 column grid (not a cartogram)
+    // Use rowIndex and colIndex to keep track of rows and columns.
     let rowIndex = 1;
     let colIndex = 1;
     Object.keys(data.states).forEach((key, i) => {
-      //If index is divisible by the number of columns
-      //Start a new row and reset the column to 0.
-      if (i % props.cols == 0 && i > 2) {
+      // If index is divisible by the number of columns
+      // Start a new row and reset the column to 0.
+      if (i % props.cols === 0 && i > 2) {
         rowIndex++;
         colIndex = 1;
       }
 
-      //Format our data to include 7day average.
-      let pop2020 = meta[key].pop_2020;
-      let series = [];
+      // Format our data to include 7day average.
+      const pop2020 = meta[key].pop_2020;
+      const series = [];
       data.states[key].reported[props.cat].forEach((d, index) => {
-        let lastWeek = data.states[key].reported[props.cat]
+        const lastWeek = data.states[key].reported[props.cat]
           .slice(index - 6, index + 1)
           .filter((d) => d != null);
 
-        let obj = {
+        const obj = {
           val: d,
-          avg7day: lastWeek.length == 7 ? d3.mean(lastWeek) : null,
+          avg7day: lastWeek.length === 7 ? d3.mean(lastWeek) : null,
         };
 
         obj.per100k =
-          obj.avg7day == 0
-            ? 0
-            : obj.avg7day > 0
-            ? (obj.avg7day / pop2020) * 100000
-            : null;
+          obj.avg7day === 0 ?
+              0 :
+            obj.avg7day > 0 ?
+                (obj.avg7day / pop2020) * 100000 :
+              null;
 
         series.push(obj);
       });
 
-      //Package each state as an object.
-      let obj = {
+      // Package each state as an object.
+      const obj = {
         row: rowIndex,
         col: colIndex,
         key: key,
@@ -87,20 +88,20 @@ class MyChartModule {
         series: series,
       };
 
-      //If not mobile, pull the rows and column assignments from the metadata
+      // If not mobile, pull the rows and column assignments from the metadata
       if (!props.isMobile) {
         obj.col = meta[key].col;
         obj.row = meta[key].row;
       }
 
       statesArray.push(obj);
-      colIndex++; //Tick up column index
+      colIndex++; // Tick up column index
     });
 
-    //Get the max value of all max values for the uniform scale version.
+    // Get the max value of all max values for the uniform scale version.
     props.uniformMax = d3.max(statesArray, (d) => d.max);
 
-    //Return our formatted data as an array.
+    // Return our formatted data as an array.
     return statesArray;
   }
 
@@ -178,29 +179,29 @@ class MyChartModule {
 
     const width = containerWidth - margin.left - margin.right;
 
-    //DEFAULT TO A SIMPLE GRID IF CONTAINER IS LESS THAN 500 PIXELS WIDE.
+    // DEFAULT TO A SIMPLE GRID IF CONTAINER IS LESS THAN 500 PIXELS WIDE.
     props.isMobile = width < 500;
 
     if (props.isMobile) {
       props.cols = 4;
       props.rows = Object.keys(data.states).length / props.cols;
 
-      //SMALLER INNER MARGINS.
-      //props.innerMargin.top = 5;
+      // SMALLER INNER MARGINS.
+      // props.innerMargin.top = 5;
       // props.innerMargin.right = 5;
       // props.innerMargin.bottom = 10;
-      //props.innerMargin.left = 5;
+      // props.innerMargin.left = 5;
     }
 
-    let wh = width / props.cols; //width and height of squares for our grid.
+    const wh = width / props.cols; // width and height of squares for our grid.
     const height = wh * props.rows;
 
-    //SET THE DOMAIN FOR THE SCALEBANDS THAT DETERMINE STATE PLACEMENT
-    let xGridDom = d3.range(1, props.cols + 1);
-    let yGridDom = d3.range(1, props.rows + 1);
+    // SET THE DOMAIN FOR THE SCALEBANDS THAT DETERMINE STATE PLACEMENT
+    const xGridDom = d3.range(1, props.cols + 1);
+    const yGridDom = d3.range(1, props.rows + 1);
 
-    //Format the data (See function for documentation)
-    let statesArray = this.getStatesArray(data, props);
+    // Format the data (See function for documentation)
+    const statesArray = this.getStatesArray(data, props);
 
     const xGridScale = d3
       .scaleBand()
@@ -214,18 +215,18 @@ class MyChartModule {
       .padding(0.05)
       .domain(yGridDom);
 
-    //Inner x scale for drawing lines along the date axis.
+    // Inner x scale for drawing lines along the date axis.
     const xScale = d3
       .scaleLinear()
       .range([0, wh - innerMargin.left - innerMargin.right])
       .domain([0, data.series.length - 1]);
 
-    //inverse scale for getting tooltip dates.
+    // inverse scale for getting tooltip dates.
     const inverseX = d3
       .scaleLinear()
       .domain([0, wh - innerMargin.left - innerMargin.right]);
 
-    //works with inverse scale for getting tooltip dates.
+    // works with inverse scale for getting tooltip dates.
     const scaleXTime = d3
       .scaleTime()
       .domain([
@@ -241,14 +242,14 @@ class MyChartModule {
       .appendSelect('g.plot')
       .attr('transform', `translate(${margin.left},${margin.top})`);
 
-    let stateGroup = plot
+    const stateGroup = plot
       .selectAll('.state-g')
       .data(statesArray)
       .join('g')
       .attr('class', 'state-g')
       .attr('transform', (d) => {
-        let xPos = xGridScale(d.col);
-        let yPos = yGridScale(d.row);
+        const xPos = xGridScale(d.col);
+        const yPos = yGridScale(d.row);
         return `translate(${xPos},${yPos})`;
       });
 
@@ -268,15 +269,15 @@ class MyChartModule {
       })
       .style('width', `${wh - 10}px`)
       .style('left', (d) => {
-        let xPos = xGridScale(d.col) + margin.left;
+        const xPos = xGridScale(d.col) + margin.left;
         return `${xPos}px`;
       })
       .style('top', (d) => {
-        let yPos = yGridScale(d.row) + margin.top;
+        const yPos = yGridScale(d.row) + margin.top;
         return `${yPos}px`;
       });
 
-    let statePlot = stateGroup
+    const statePlot = stateGroup
       .appendSelect('g.state-plot')
       .attr('transform', `translate(${innerMargin.left},${innerMargin.top})`);
 
@@ -288,7 +289,7 @@ class MyChartModule {
       .attr('d', (d) => makeLine(d));
 
     function makeLine(datum) {
-      let yMax = props.scaleType == 'adjusted' ? datum.max : props.uniformMax;
+      const yMax = props.scaleType === 'adjusted' ? datum.max : props.uniformMax;
 
       console.log(yMax);
 
@@ -297,7 +298,7 @@ class MyChartModule {
         .range([wh - innerMargin.top - innerMargin.bottom, 0])
         .domain([0, yMax]);
 
-      let line = d3
+      const line = d3
         .line()
         .defined((d) => d[props.lineVar] !== null)
         .x((d, i) => xScale(i))
@@ -322,18 +323,18 @@ class MyChartModule {
         if (!event) return;
         this.selection().selectAll('.tooltip').remove();
         const parent = event.srcElement.parentNode;
-        let mx =
+        const mx =
           event.pageX - parent.getBoundingClientRect().left - innerMargin.left;
         inverseX.range([0, data.series.length]);
 
         let index = Math.round(inverseX(mx));
 
         index =
-          index < 0
-            ? 0
-            : index >= data.series.length
-            ? data.series.length - 2
-            : index;
+          index < 0 ?
+              0 :
+            index >= data.series.length ?
+                data.series.length - 2 :
+              index;
 
         const datum = d.series[index];
         const datumY = datum[props.lineVar];
