@@ -195,13 +195,34 @@
         }
       ]
     },
+    "_snowpack/pkg/common/active-fa5ecc9c.js": {
+      "bytes": 74106,
+      "imports": []
+    },
+    "_snowpack/pkg/d3-transition.js": {
+      "bytes": 92,
+      "imports": [
+        {
+          "path": "_snowpack/pkg/common/active-fa5ecc9c.js",
+          "kind": "import-statement"
+        }
+      ]
+    },
     "_snowpack/pkg/common/isoParse-6f8f6e93.js": {
       "bytes": 24851,
       "imports": []
     },
     "_snowpack/pkg/d3.js": {
-      "bytes": 551111,
+      "bytes": 478105,
       "imports": [
+        {
+          "path": "_snowpack/pkg/common/active-fa5ecc9c.js",
+          "kind": "import-statement"
+        },
+        {
+          "path": "_snowpack/pkg/common/active-fa5ecc9c.js",
+          "kind": "import-statement"
+        },
         {
           "path": "_snowpack/pkg/common/isoParse-6f8f6e93.js",
           "kind": "import-statement"
@@ -265,8 +286,12 @@
       "imports": []
     },
     "dist/js/index.js": {
-      "bytes": 12134,
+      "bytes": 12182,
       "imports": [
+        {
+          "path": "_snowpack/pkg/d3-transition.js",
+          "kind": "import-statement"
+        },
         {
           "path": "_snowpack/pkg/d3.js",
           "kind": "import-statement"
@@ -448,11 +473,17 @@
         "dist/demo/App/Explorer.svelte.js": {
           "bytesInOutput": 761
         },
-        "_snowpack/pkg/common/isoParse-6f8f6e93.js": {
-          "bytesInOutput": 11995
+        "_snowpack/pkg/common/active-fa5ecc9c.js": {
+          "bytesInOutput": 36775
+        },
+        "_snowpack/pkg/d3-transition.js": {
+          "bytesInOutput": 0
         },
         "_snowpack/pkg/d3.js": {
-          "bytesInOutput": 132752
+          "bytesInOutput": 95981
+        },
+        "_snowpack/pkg/common/isoParse-6f8f6e93.js": {
+          "bytesInOutput": 11995
         },
         "_snowpack/pkg/common/locale-27ba713c.js": {
           "bytesInOutput": 4478
@@ -491,7 +522,7 @@
           "bytesInOutput": 44
         }
       },
-      "bytes": 1409854
+      "bytes": 1409858
     },
     "../~~bundle~~/dist/demo/App/index.css": {
       "imports": [],
