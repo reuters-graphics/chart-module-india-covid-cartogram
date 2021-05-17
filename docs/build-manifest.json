@@ -195,73 +195,26 @@
         }
       ]
     },
-    "_snowpack/pkg/common/active-fa5ecc9c.js": {
-      "bytes": 74106,
-      "imports": []
-    },
-    "_snowpack/pkg/d3-transition.js": {
-      "bytes": 92,
-      "imports": [
-        {
-          "path": "_snowpack/pkg/common/active-fa5ecc9c.js",
-          "kind": "import-statement"
-        }
-      ]
-    },
     "_snowpack/pkg/common/isoParse-6f8f6e93.js": {
       "bytes": 24851,
       "imports": []
     },
     "_snowpack/pkg/d3.js": {
-      "bytes": 478105,
+      "bytes": 551111,
       "imports": [
-        {
-          "path": "_snowpack/pkg/common/active-fa5ecc9c.js",
-          "kind": "import-statement"
-        },
-        {
-          "path": "_snowpack/pkg/common/active-fa5ecc9c.js",
-          "kind": "import-statement"
-        },
         {
           "path": "_snowpack/pkg/common/isoParse-6f8f6e93.js",
           "kind": "import-statement"
         },
         {
           "path": "_snowpack/pkg/common/isoParse-6f8f6e93.js",
-          "kind": "import-statement"
-        }
-      ]
-    },
-    "_snowpack/pkg/common/locale-27ba713c.js": {
-      "bytes": 11030,
-      "imports": []
-    },
-    "_snowpack/pkg/d3-format.js": {
-      "bytes": 65,
-      "imports": [
-        {
-          "path": "_snowpack/pkg/common/locale-27ba713c.js",
-          "kind": "import-statement"
-        }
-      ]
-    },
-    "dist/js/utils.js": {
-      "bytes": 964,
-      "imports": [
-        {
-          "path": "_snowpack/pkg/d3-format.js",
           "kind": "import-statement"
         }
       ]
     },
     "_snowpack/pkg/@reuters-graphics/d3-locale.js": {
-      "bytes": 20064,
+      "bytes": 30880,
       "imports": [
-        {
-          "path": "_snowpack/pkg/common/locale-27ba713c.js",
-          "kind": "import-statement"
-        },
         {
           "path": "_snowpack/pkg/common/isoParse-6f8f6e93.js",
           "kind": "import-statement"
@@ -285,19 +238,15 @@
       "bytes": 3010,
       "imports": []
     },
+    "dist/js/utils.js": {
+      "bytes": 161,
+      "imports": []
+    },
     "dist/js/index.js": {
-      "bytes": 12182,
+      "bytes": 12107,
       "imports": [
         {
-          "path": "_snowpack/pkg/d3-transition.js",
-          "kind": "import-statement"
-        },
-        {
           "path": "_snowpack/pkg/d3.js",
-          "kind": "import-statement"
-        },
-        {
-          "path": "dist/js/utils.js",
           "kind": "import-statement"
         },
         {
@@ -314,6 +263,10 @@
         },
         {
           "path": "dist/data/india_states_meta.json.proxy.js",
+          "kind": "import-statement"
+        },
+        {
+          "path": "dist/js/utils.js",
           "kind": "import-statement"
         }
       ]
@@ -473,29 +426,14 @@
         "dist/demo/App/Explorer.svelte.js": {
           "bytesInOutput": 761
         },
-        "_snowpack/pkg/common/active-fa5ecc9c.js": {
-          "bytesInOutput": 36775
-        },
-        "_snowpack/pkg/d3-transition.js": {
-          "bytesInOutput": 0
-        },
-        "_snowpack/pkg/d3.js": {
-          "bytesInOutput": 95981
-        },
         "_snowpack/pkg/common/isoParse-6f8f6e93.js": {
           "bytesInOutput": 11995
         },
-        "_snowpack/pkg/common/locale-27ba713c.js": {
-          "bytesInOutput": 4478
-        },
-        "_snowpack/pkg/d3-format.js": {
-          "bytesInOutput": 0
-        },
-        "dist/js/utils.js": {
-          "bytesInOutput": 172
+        "_snowpack/pkg/d3.js": {
+          "bytesInOutput": 132752
         },
         "_snowpack/pkg/@reuters-graphics/d3-locale.js": {
-          "bytesInOutput": 11283
+          "bytesInOutput": 15761
         },
         "_snowpack/pkg/d3-appendselect.js": {
           "bytesInOutput": 919
@@ -506,8 +444,11 @@
         "dist/data/india_states_meta.json.proxy.js": {
           "bytesInOutput": 2559
         },
+        "dist/js/utils.js": {
+          "bytesInOutput": 59
+        },
         "dist/js/index.js": {
-          "bytesInOutput": 5054
+          "bytesInOutput": 5041
         },
         "dist/js/india-sample.json.proxy.js": {
           "bytesInOutput": 102697
@@ -522,7 +463,7 @@
           "bytesInOutput": 44
         }
       },
-      "bytes": 1409858
+      "bytes": 1409728
     },
     "../~~bundle~~/dist/demo/App/index.css": {
       "imports": [],
