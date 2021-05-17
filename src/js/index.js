@@ -69,11 +69,11 @@ class MyChartModule {
         };
 
         obj.per100k =
-          obj.avg7day === 0 ?
-              0 :
-            obj.avg7day > 0 ?
-                (obj.avg7day / pop2020) * 100000 :
-              null;
+          obj.avg7day === 0
+            ? 0
+            : obj.avg7day > 0
+            ? (obj.avg7day / pop2020) * 100000
+            : null;
 
         series.push(obj);
       });
@@ -289,7 +289,8 @@ class MyChartModule {
       .attr('d', (d) => makeLine(d));
 
     function makeLine(datum) {
-      const yMax = props.scaleType === 'adjusted' ? datum.max : props.uniformMax;
+      const yMax =
+        props.scaleType === 'adjusted' ? datum.max : props.uniformMax;
 
       console.log(yMax);
 
@@ -330,11 +331,11 @@ class MyChartModule {
         let index = Math.round(inverseX(mx));
 
         index =
-          index < 0 ?
-              0 :
-            index >= data.series.length ?
-                data.series.length - 2 :
-              index;
+          index < 0
+            ? 0
+            : index >= data.series.length
+            ? data.series.length - 2
+            : index;
 
         const datum = d.series[index];
         const datumY = datum[props.lineVar];

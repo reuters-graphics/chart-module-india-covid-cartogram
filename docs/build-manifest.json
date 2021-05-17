@@ -5,7 +5,7 @@
       "imports": []
     },
     "dist/demo/App/App.svelte.css": {
-      "bytes": 43,
+      "bytes": 42,
       "imports": []
     },
     "_snowpack/pkg/common/index-2f5d26cd.js": {
@@ -234,6 +234,19 @@
         }
       ]
     },
+    "_snowpack/pkg/@reuters-graphics/d3-locale.js": {
+      "bytes": 20064,
+      "imports": [
+        {
+          "path": "_snowpack/pkg/common/locale-27ba713c.js",
+          "kind": "import-statement"
+        },
+        {
+          "path": "_snowpack/pkg/common/isoParse-6f8f6e93.js",
+          "kind": "import-statement"
+        }
+      ]
+    },
     "_snowpack/pkg/d3-appendselect.js": {
       "bytes": 2961,
       "imports": []
@@ -251,21 +264,8 @@
       "bytes": 3010,
       "imports": []
     },
-    "_snowpack/pkg/@reuters-graphics/d3-locale.js": {
-      "bytes": 20064,
-      "imports": [
-        {
-          "path": "_snowpack/pkg/common/locale-27ba713c.js",
-          "kind": "import-statement"
-        },
-        {
-          "path": "_snowpack/pkg/common/isoParse-6f8f6e93.js",
-          "kind": "import-statement"
-        }
-      ]
-    },
     "dist/js/index.js": {
-      "bytes": 12062,
+      "bytes": 12134,
       "imports": [
         {
           "path": "_snowpack/pkg/d3.js",
@@ -273,6 +273,10 @@
         },
         {
           "path": "dist/js/utils.js",
+          "kind": "import-statement"
+        },
+        {
+          "path": "_snowpack/pkg/@reuters-graphics/d3-locale.js",
           "kind": "import-statement"
         },
         {
@@ -285,10 +289,6 @@
         },
         {
           "path": "dist/data/india_states_meta.json.proxy.js",
-          "kind": "import-statement"
-        },
-        {
-          "path": "_snowpack/pkg/@reuters-graphics/d3-locale.js",
           "kind": "import-statement"
         }
       ]
@@ -335,7 +335,7 @@
       ]
     },
     "dist/demo/App/App.svelte.js": {
-      "bytes": 2955,
+      "bytes": 2954,
       "imports": [
         {
           "path": "dist/demo/App/App.svelte.css",
@@ -463,6 +463,9 @@
         "dist/js/utils.js": {
           "bytesInOutput": 172
         },
+        "_snowpack/pkg/@reuters-graphics/d3-locale.js": {
+          "bytesInOutput": 11283
+        },
         "_snowpack/pkg/d3-appendselect.js": {
           "bytesInOutput": 919
         },
@@ -472,11 +475,8 @@
         "dist/data/india_states_meta.json.proxy.js": {
           "bytesInOutput": 2559
         },
-        "_snowpack/pkg/@reuters-graphics/d3-locale.js": {
-          "bytesInOutput": 11283
-        },
         "dist/js/index.js": {
-          "bytesInOutput": 5051
+          "bytesInOutput": 5054
         },
         "dist/js/india-sample.json.proxy.js": {
           "bytesInOutput": 102697
@@ -485,19 +485,19 @@
           "bytesInOutput": 2426
         },
         "dist/demo/App/App.svelte.js": {
-          "bytesInOutput": 894
+          "bytesInOutput": 893
         },
         "dist/demo/App/index.js": {
           "bytesInOutput": 44
         }
       },
-      "bytes": 1409852
+      "bytes": 1409854
     },
     "../~~bundle~~/dist/demo/App/index.css": {
       "imports": [],
       "inputs": {
         "dist/demo/App/App.svelte.css": {
-          "bytesInOutput": 43
+          "bytesInOutput": 42
         },
         "dist/demo/App/ChartContainer.svelte.css": {
           "bytesInOutput": 767
@@ -515,7 +515,7 @@
           "bytesInOutput": 226
         }
       },
-      "bytes": 1624
+      "bytes": 1623
     }
   }
 }

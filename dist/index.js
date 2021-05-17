@@ -2,14 +2,14 @@
 
 var d3 = require('d3');
 var d3Format = require('d3-format');
+var D3Locale = require('@reuters-graphics/d3-locale');
 var d3Appendselect = require('d3-appendselect');
 var merge = require('lodash/merge');
-var D3Locale = require('@reuters-graphics/d3-locale');
 
 function _interopDefaultLegacy (e) { return e && typeof e === 'object' && 'default' in e ? e : { 'default': e }; }
 
-var merge__default = /*#__PURE__*/_interopDefaultLegacy(merge);
 var D3Locale__default = /*#__PURE__*/_interopDefaultLegacy(D3Locale);
+var merge__default = /*#__PURE__*/_interopDefaultLegacy(merge);
 
 function _classCallCheck(instance, Constructor) {
   if (!(instance instanceof Constructor)) {
@@ -420,19 +420,19 @@ var MyChartModule = /*#__PURE__*/function () {
           3) IF MOBILE, CALCULATE GRID PLACEMENT BASED ON SCREEN WIDTH
           4) CREATE SERIES FOR EACH STATE BASED ON VALUE OF `props.cat` ('deaths' OR 'cases')
       */
-      //Create empty array to return at the end of this function.
-      var statesArray = []; //Default to a 6 column grid (not a cartogram)
-      //Use rowIndex and colIndex to keep track of rows and columns.
+      // Create empty array to return at the end of this function.
+      var statesArray = []; // Default to a 6 column grid (not a cartogram)
+      // Use rowIndex and colIndex to keep track of rows and columns.
 
       var rowIndex = 1;
       var colIndex = 1;
       Object.keys(data.states).forEach(function (key, i) {
-        //If index is divisible by the number of columns
-        //Start a new row and reset the column to 0.
-        if (i % props.cols == 0 && i > 2) {
+        // If index is divisible by the number of columns
+        // Start a new row and reset the column to 0.
+        if (i % props.cols === 0 && i > 2) {
           rowIndex++;
           colIndex = 1;
-        } //Format our data to include 7day average.
+        } // Format our data to include 7day average.
 
 
         var pop2020 = meta[key].pop_2020;
@@ -443,11 +443,11 @@ var MyChartModule = /*#__PURE__*/function () {
           });
           var obj = {
             val: d,
-            avg7day: lastWeek.length == 7 ? d3.mean(lastWeek) : null
+            avg7day: lastWeek.length === 7 ? d3.mean(lastWeek) : null
           };
-          obj.per100k = obj.avg7day == 0 ? 0 : obj.avg7day > 0 ? obj.avg7day / pop2020 * 100000 : null;
+          obj.per100k = obj.avg7day === 0 ? 0 : obj.avg7day > 0 ? obj.avg7day / pop2020 * 100000 : null;
           series.push(obj);
-        }); //Package each state as an object.
+        }); // Package each state as an object.
 
         var obj = {
           row: rowIndex,
@@ -458,7 +458,7 @@ var MyChartModule = /*#__PURE__*/function () {
             return d[props.lineVar];
           }),
           series: series
-        }; //If not mobile, pull the rows and column assignments from the metadata
+        }; // If not mobile, pull the rows and column assignments from the metadata
 
         if (!props.isMobile) {
           obj.col = meta[key].col;
@@ -466,12 +466,12 @@ var MyChartModule = /*#__PURE__*/function () {
         }
 
         statesArray.push(obj);
-        colIndex++; //Tick up column index
-      }); //Get the max value of all max values for the uniform scale version.
+        colIndex++; // Tick up column index
+      }); // Get the max value of all max values for the uniform scale version.
 
       props.uniformMax = d3.max(statesArray, function (d) {
         return d.max;
-      }); //Return our formatted data as an array.
+      }); // Return our formatted data as an array.
 
       return statesArray;
     }
@@ -518,33 +518,33 @@ var MyChartModule = /*#__PURE__*/function () {
           containerWidth = _container$getBoundin.width; // Respect the width of your container!
 
 
-      var width = containerWidth - margin.left - margin.right; //DEFAULT TO A SIMPLE GRID IF CONTAINER IS LESS THAN 500 PIXELS WIDE.
+      var width = containerWidth - margin.left - margin.right; // DEFAULT TO A SIMPLE GRID IF CONTAINER IS LESS THAN 500 PIXELS WIDE.
 
       props.isMobile = width < 500;
 
       if (props.isMobile) {
         props.cols = 4;
-        props.rows = Object.keys(data.states).length / props.cols; //SMALLER INNER MARGINS.
-        //props.innerMargin.top = 5;
+        props.rows = Object.keys(data.states).length / props.cols; // SMALLER INNER MARGINS.
+        // props.innerMargin.top = 5;
         // props.innerMargin.right = 5;
         // props.innerMargin.bottom = 10;
-        //props.innerMargin.left = 5;
+        // props.innerMargin.left = 5;
       }
 
-      var wh = width / props.cols; //width and height of squares for our grid.
+      var wh = width / props.cols; // width and height of squares for our grid.
 
-      var height = wh * props.rows; //SET THE DOMAIN FOR THE SCALEBANDS THAT DETERMINE STATE PLACEMENT
+      var height = wh * props.rows; // SET THE DOMAIN FOR THE SCALEBANDS THAT DETERMINE STATE PLACEMENT
 
       var xGridDom = d3.range(1, props.cols + 1);
-      var yGridDom = d3.range(1, props.rows + 1); //Format the data (See function for documentation)
+      var yGridDom = d3.range(1, props.rows + 1); // Format the data (See function for documentation)
 
       var statesArray = this.getStatesArray(data, props);
       var xGridScale = d3.scaleBand().rangeRound([0, wh * props.cols]).padding(0.05).domain(xGridDom);
-      var yGridScale = d3.scaleBand().rangeRound([0, wh * props.rows]).padding(0.05).domain(yGridDom); //Inner x scale for drawing lines along the date axis.
+      var yGridScale = d3.scaleBand().rangeRound([0, wh * props.rows]).padding(0.05).domain(yGridDom); // Inner x scale for drawing lines along the date axis.
 
-      var xScale = d3.scaleLinear().range([0, wh - innerMargin.left - innerMargin.right]).domain([0, data.series.length - 1]); //inverse scale for getting tooltip dates.
+      var xScale = d3.scaleLinear().range([0, wh - innerMargin.left - innerMargin.right]).domain([0, data.series.length - 1]); // inverse scale for getting tooltip dates.
 
-      var inverseX = d3.scaleLinear().domain([0, wh - innerMargin.left - innerMargin.right]); //works with inverse scale for getting tooltip dates.
+      var inverseX = d3.scaleLinear().domain([0, wh - innerMargin.left - innerMargin.right]); // works with inverse scale for getting tooltip dates.
 
       var scaleXTime = d3.scaleTime().domain([new Date(data.series[0]), new Date(data.series[data.series.length - 1])]).range([0, wh - innerMargin.left - innerMargin.right]);
       var plot = this.selection().appendSelect('svg') // 👈 Use appendSelect instead of append for non-data-bound elements!
@@ -573,7 +573,7 @@ var MyChartModule = /*#__PURE__*/function () {
       });
 
       function makeLine(datum) {
-        var yMax = props.scaleType == 'adjusted' ? datum.max : props.uniformMax;
+        var yMax = props.scaleType === 'adjusted' ? datum.max : props.uniformMax;
         console.log(yMax);
         datum.yScale = d3.scaleLinear().range([wh - innerMargin.top - innerMargin.bottom, 0]).domain([0, yMax]);
         var line = d3.line().defined(function (d) {
