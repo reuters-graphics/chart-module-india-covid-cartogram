@@ -24,6 +24,9 @@
   },
   "dependencies": {
     "@reuters-graphics/d3-locale": "^0.1.0",
+    "lodash": "4.17.20"
+  },
+  "peerDependencies": {
     "d3-appendselect": "^0.1.0",
     "d3-array": "2.12.1",
     "d3-axis": "2.0.0",
@@ -33,8 +36,7 @@
     "d3-selection": "2.0.0",
     "d3-shape": "2.1.0",
     "d3-time": "2.1.1",
-    "d3-transition": "2.0.0",
-    "lodash": "4.17.20"
+    "d3-transition": "2.0.0"
   },
   "devDependencies": {
     "@babel/core": "^7.0.0",
