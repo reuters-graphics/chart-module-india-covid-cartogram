@@ -615,9 +615,9 @@ var MyChartModule = /*#__PURE__*/function () {
 
         var parent = event.srcElement.parentNode;
         var mx = event.pageX - parent.getBoundingClientRect().left - innerMargin.left;
-        inverseX.range([0, data.series.length]);
-        var index = Math.round(inverseX(mx));
-        index = index < 0 ? 0 : index >= data.series.length ? data.series.length - 2 : index;
+        inverseX.range([0, data.series.length - 1]);
+        var index = Math.ceil(inverseX(mx));
+        index = index < 0 ? 0 : index >= data.series.length ? data.series.length - 1 : index;
         var datum = d.series[index];
         var datumY = datum[props.lineVar];
         var date = new Date(data.series[index]);
