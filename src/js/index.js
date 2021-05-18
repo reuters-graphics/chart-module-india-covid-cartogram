@@ -75,11 +75,11 @@ class MyChartModule {
         };
 
         obj.per100k =
-          obj.avg7day === 0
-            ? 0
-            : obj.avg7day > 0
-            ? (obj.avg7day / pop2020) * 100000
-            : null;
+          obj.avg7day === 0 ?
+              0 :
+            obj.avg7day > 0 ?
+                (obj.avg7day / pop2020) * 100000 :
+              null;
 
         series.push(obj);
       });
@@ -319,22 +319,21 @@ class MyChartModule {
 
     touchBox.on(
       'mouseover mousemove touchenter touchstart touchmove',
-      (event, d) => {
-        if (!event) return;
+      (d, i, nodes) => {
+        if (!d3.event) return;
+        const parent = nodes[i].parentNode;
         this.selection().selectAll('.tooltip').remove();
-        const parent = event.srcElement.parentNode;
-        const mx =
-          event.pageX - parent.getBoundingClientRect().left - innerMargin.left;
+        const mx = d3.mouse(parent)[0] - innerMargin.left;
         inverseX.range([0, data.series.length - 1]);
 
         let index = Math.ceil(inverseX(mx));
 
         index =
-          index < 0
-            ? 0
-            : index >= data.series.length
-            ? data.series.length - 1
-            : index;
+          index < 0 ?
+              0 :
+            index >= data.series.length ?
+                data.series.length - 1 :
+              index;
 
         const datum = d.series[index];
         const datumY = datum[props.lineVar];
