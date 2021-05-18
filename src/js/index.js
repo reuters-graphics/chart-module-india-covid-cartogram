@@ -295,8 +295,6 @@ class MyChartModule {
       const yMax =
         props.scaleType === 'adjusted' ? datum.max : props.uniformMax;
 
-      console.log(yMax);
-
       datum.yScale = scaleLinear()
         .range([wh - innerMargin.top - innerMargin.bottom, 0])
         .domain([0, yMax]);

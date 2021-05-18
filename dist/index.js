@@ -596,7 +596,6 @@ var MyChartModule = /*#__PURE__*/function () {
 
       function makeLine(datum) {
         var yMax = props.scaleType === 'adjusted' ? datum.max : props.uniformMax;
-        console.log(yMax);
         datum.yScale = d3Scale.scaleLinear().range([wh - innerMargin.top - innerMargin.bottom, 0]).domain([0, yMax]);
         var line = d3Shape.line().defined(function (d) {
           return d[props.lineVar] !== null;
