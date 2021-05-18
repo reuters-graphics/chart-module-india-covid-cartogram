@@ -4961,49 +4961,49 @@ function d3Line() {
 
 var AN = {
 	name: "Andaman and Nicobar Islands",
-	short: "A & N Isl.",
+	short: "A & N Islands",
 	pop_2020: 417036,
-	col: 6,
-	row: 7
+	col: 9,
+	row: 8
 };
 var AP = {
 	name: "Andhra Pradesh",
 	short: "Andhra Pr.",
 	pop_2020: 53903393,
 	col: 4,
-	row: 5
+	row: 6
 };
 var AR = {
 	name: "Arunachal Pradesh",
 	short: "Arunachal Pr.",
 	pop_2020: 1570458,
-	col: 8,
+	col: 9,
 	row: 2
 };
 var AS = {
 	name: "Assam",
 	short: "Assam",
 	pop_2020: 35607039,
-	col: 6,
-	row: 2
+	col: 8,
+	row: 3
 };
 var BR = {
 	name: "Bihar",
 	short: "Bihar",
 	pop_2020: 124799926,
-	col: 5,
+	col: 6,
 	row: 3
 };
 var CH = {
 	name: "Chandigarh",
-	short: "Chand-igarh",
+	short: "Chandigarh",
 	pop_2020: 1158473,
 	col: 2,
 	row: 3
 };
 var CT = {
 	name: "Chhattisgarh",
-	short: "Chhatt-isgarh",
+	short: "Chhattisgarh",
 	pop_2020: 29436231,
 	col: 4,
 	row: 4
@@ -5012,21 +5012,21 @@ var DN = {
 	name: "Dadra and Nagar Haveli and Daman and Diu",
 	short: "DNH/DD",
 	pop_2020: 615724,
-	col: 1,
-	row: 6
+	col: 2,
+	row: 5
 };
 var DL = {
 	name: "Delhi",
 	short: "Delhi",
 	pop_2020: 18710922,
-	col: 2,
-	row: 4
+	col: 4,
+	row: 3
 };
 var GA = {
 	name: "Goa",
 	short: "Goa",
 	pop_2020: 1586250,
-	col: 2,
+	col: 3,
 	row: 6
 };
 var GJ = {
@@ -5034,34 +5034,34 @@ var GJ = {
 	short: "Gujarat",
 	pop_2020: 63872399,
 	col: 1,
-	row: 5
+	row: 4
 };
 var HR = {
 	name: "Haryana",
 	short: "Haryana",
 	pop_2020: 28204692,
-	col: 1,
+	col: 3,
 	row: 3
 };
 var HP = {
 	name: "Himachal Pradesh",
 	short: "Himachal Pr.",
 	pop_2020: 7451955,
-	col: 3,
+	col: 4,
 	row: 2
 };
 var JK = {
 	name: "Jammu and Kashmir",
 	short: "Jammu & Kashmir",
 	pop_2020: 13606320,
-	col: 2,
+	col: 3,
 	row: 1
 };
 var JH = {
 	name: "Jharkhand",
 	short: "Jharkhand",
 	pop_2020: 38593948,
-	col: 5,
+	col: 6,
 	row: 4
 };
 var KA = {
@@ -5069,28 +5069,28 @@ var KA = {
 	short: "Karnataka",
 	pop_2020: 67562686,
 	col: 3,
-	row: 6
+	row: 7
 };
 var KL = {
 	name: "Kerala",
 	short: "Kerala",
 	pop_2020: 35699443,
 	col: 3,
-	row: 7
+	row: 8
 };
 var LA = {
 	name: "Ladakh",
 	short: "Ladakh",
 	pop_2020: 289023,
-	col: 3,
+	col: 4,
 	row: 1
 };
 var LD = {
 	name: "Lakshadweep",
-	short: "Lakshad-weep",
+	short: "Lakshadweep",
 	pop_2020: 73183,
-	col: 2,
-	row: 7
+	col: 1,
+	row: 8
 };
 var MP = {
 	name: "Madhya Pradesh",
@@ -5101,115 +5101,115 @@ var MP = {
 };
 var MH = {
 	name: "Maharashtra",
-	short: "Mahar-ashtra",
+	short: "Maharashtra",
 	pop_2020: 123144223,
-	col: 2,
+	col: 3,
 	row: 5
 };
 var MN = {
 	name: "Manipur",
 	short: "Manipur",
 	pop_2020: 3091545,
-	col: 8,
-	row: 3
+	col: 9,
+	row: 4
 };
 var ML = {
 	name: "Meghalaya",
 	short: "Meghalaya",
 	pop_2020: 3366710,
-	col: 7,
-	row: 3
+	col: 8,
+	row: 4
 };
 var MZ = {
 	name: "Mizoram",
 	short: "Mizoram",
 	pop_2020: 1239244,
-	col: 8,
-	row: 4
+	col: 9,
+	row: 5
 };
 var NL = {
 	name: "Nagaland",
 	short: "Nagaland",
 	pop_2020: 2249695,
-	col: 7,
-	row: 2
+	col: 9,
+	row: 3
 };
 var OR = {
 	name: "Odisha",
 	short: "Odisha",
 	pop_2020: 46356334,
 	col: 5,
-	row: 5
+	row: 4
 };
 var PY = {
 	name: "Puducherry",
 	short: "Puducherry",
 	pop_2020: 1413542,
 	col: 4,
-	row: 6
+	row: 7
 };
 var PB = {
 	name: "Punjab",
 	short: "Punjab",
 	pop_2020: 30141373,
-	col: 2,
+	col: 3,
 	row: 2
 };
 var RJ = {
 	name: "Rajasthan",
 	short: "Rajasthan",
 	pop_2020: 81032689,
-	col: 1,
+	col: 2,
 	row: 4
 };
 var SK = {
 	name: "Sikkim",
 	short: "Sikkim",
 	pop_2020: 690251,
-	col: 6,
-	row: 3
+	col: 7,
+	row: 2
 };
 var TN = {
 	name: "Tamil Nadu",
 	short: "Tamil Nadu",
 	pop_2020: 77841267,
-	col: 3,
+	col: 4,
 	row: 8
 };
 var TG = {
 	name: "Telangana",
 	short: "Telangana",
 	pop_2020: 38510982,
-	col: 3,
+	col: 4,
 	row: 5
 };
 var TR = {
 	name: "Tripura",
 	short: "Tripura",
 	pop_2020: 4169794,
-	col: 7,
-	row: 4
+	col: 8,
+	row: 5
 };
 var UP = {
 	name: "Uttar Pradesh",
 	short: "Uttar Pr.",
 	pop_2020: 237882725,
-	col: 4,
+	col: 5,
 	row: 3
 };
 var UT = {
 	name: "Uttarakhand",
-	short: "Uttara-khand",
+	short: "Uttarakhand",
 	pop_2020: 11250858,
-	col: 3,
-	row: 3
+	col: 5,
+	row: 2
 };
 var WB = {
 	name: "West Bengal",
-	short: "W. Bengal",
+	short: "West Bengal",
 	pop_2020: 99609303,
-	col: 6,
-	row: 4
+	col: 7,
+	row: 3
 };
 var meta = {
 	AN: AN,
@@ -5267,7 +5267,7 @@ var MyChartModule = /*#__PURE__*/function () {
     _classCallCheck(this, MyChartModule);
 
     _defineProperty(this, "defaultProps", {
-      cols: 8,
+      cols: 9,
       rows: 8,
       cat: 'cases',
       lineVar: 'avg7day',
